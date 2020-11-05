@@ -1,0 +1,187 @@
+<!------------------------------------------评论列表------------------------------------------>
+<!--注1:jQuery文件博客园中不用导入,博客园head中默认添加了-->
+<script type="text/javascript">
+$(function(){
+    $('#blogTitle h1').addClass('bounceInLeft animated');
+    $('#blogTitle h2').addClass('bounceInRight animated');
+    // 删除反对按钮
+    $('.buryit').remove();
+    initCommentData();
+});
+//志银zain 2018.11.01,解决http图片用于https网页会有警告提示问题,方法:js动态将http头全改为https
+function httpToHttps(strHttp) {
+    var strRetHttps;
+    var lenStrHttp = 0;
+    if(typeof(strHttp) != "undefined") {
+        lenStrHttp = strHttp.length;  //console.log(strHttp)
+    }
+    if(lenStrHttp >= 5) {
+        var strHead = "";
+        for(var i = 0; i < 5; i++) {
+            strHead += strHttp[i];
+        }
+        if(strHead == "http:") {
+            strRetHttps = "https:";
+            for(var i = 5; i < lenStrHttp; i++) {
+                strRetHttps += strHttp[i];
+            }
+        } else {
+            strRetHttps = strHttp;
+        }
+    } else {
+        strRetHttps = strHttp;
+    }
+    return strRetHttps;
+}
+function initCommentData() {
+    $('.feedbackItem').each(function() {
+        var text = $(this).find('.feedbackListSubtitle .layer').text();
+        // 将楼层信息放到data里面
+        // $(this).find('.blog_comment_body').attr('data-louceng', text.replace(/^#/g, ''));
+        if($(this).find('.feedbackListSubtitle .louzhu').length>0) $(this).addClass('myself');
+        var strGetHttp = $(this).find('> .feedbackCon > span').html();
+        strGetHttp = httpToHttps(strGetHttp);
+        var avatar = strGetHttp || 'https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_sample_face.gif';
+        $(this).find('> .feedbackCon > .blog_comment_body').append('<img class="user-avatar" src="'+avatar+'"/>')
+    });
+}
+$(document).ajaxComplete(function(event, xhr, settings) {
+    // 监听获取评论ajax事件
+    if(settings.url.indexOf('/mvc/blog/GetComments.aspx') >= 0) {
+        initCommentData();  //只用初始化函数不用ajax刷新,本地可行,博客园上不行
+    }
+});
+</script>
+
+<!------------------------------------------火箭返回顶部按钮------------------------------------------>
+<!--注:jQuery文件博客园中不用导入,博客园head中默认添加了-->
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+<script type="text/javascript">
+$(function() {
+    var e = $("#rocket-to-top"),
+    t = $(document).scrollTop(),
+    n,
+    r,
+    i = !0;
+    $(window).scroll(function() {
+        var t = $(document).scrollTop();
+        t == 0 ? e.css("background-position") == "0px 0px" ? e.fadeOut("slow") : i && (i = !1, $(".level-2").css("opacity", 1), e.delay(100).animate({
+            marginTop: "-1000px"
+        },
+        "normal",
+        function() {
+            e.css({
+                "margin-top": "0px",
+                display: "none"
+            }),
+            i = !0
+        })) : e.fadeIn("slow")
+    }),
+    e.hover(function() {
+        $(".level-2").stop(!0).animate({
+            opacity: 1
+        })
+    },
+    function() {
+        $(".level-2").stop(!0).animate({
+            opacity: 0
+        })
+    }),
+    $(".level-3").click(function() {
+        function t() {
+            var t = e.css("background-position");
+            if (e.css("display") == "none" || i == 0) {
+                clearInterval(n),
+                e.css("background-position", "0px 0px");
+                return
+            }
+            switch (t){
+            case "0px 0px":
+                e.css("background-position", "-298px 0px");
+                break;
+            case "-298px 0px":
+                e.css("background-position", "-447px 0px");
+                break;
+            case "-447px 0px":
+                e.css("background-position", "-596px 0px");
+                break;
+            case "-596px 0px":
+                e.css("background-position", "-745px 0px");
+                break;
+            case "-745px 0px":
+                e.css("background-position", "-298px 0px");
+            }
+        }
+        if (!i) return;
+        n = setInterval(t, 50),
+        $("html,body").animate({scrollTop: 0},"slow");
+    });
+});
+</script>
+
+<!------------------------------------------代码高亮(highlight.js)------------------------------------------>
+<!--注:jQuery文件博客园中不用导入,博客园head中默认添加了-->
+<script src="https://files.cnblogs.com/files/chenzhiyin/highlight.pack_all.js"></script>
+<script src="https://files.cnblogs.com/files/chenzhiyin/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+<script>
+    //添加行号，且代码高亮自定义
+    $("code").each(function(){
+      $(this).html("<ul><li>" + $(this).html().replace(/\n/g,"\n</li><li>") +"\n</li></ul>");
+    });
+</script>
+<script>
+    $(function() {
+        $("pre").each(function() {
+            $(this).hover(function() {
+                $(this).find("code").first().prepend("<div class=\'zain_open\'>▣</div>");
+                $(".zain_open").click(function() {
+                    $(".zain_open").css({"display": "none"});
+                    var pre = $(this).parent().parent().html();
+                    var pre1 = "<div class=\"zain_pre\"><pre>"+ pre +"<\/pre><\/div>";
+                    $("body").after(pre1);
+                    $(".zain_pre").prepend("<div class=\'zain_clear\'>✘</div>");
+                    $(".zain_clear").click(function() {
+                        $(".zain_pre").remove();
+                    });
+                    $(".zain_pre").prepend("<div class=\'zain_min_full\'>▬</div>");
+                    $(".zain_min_full").click(function() {
+                        $(this).next().next().find("code").first().css({"height": "17px"});
+                        $(this).next().next().find("code").first().css({"width": "300px"});
+                    });
+                    $(".zain_pre").prepend("<div class=\'zain_max_full\'>✚</div>");
+                    $(".zain_max_full").click(function() {
+                        $(this).next().next().next().find("code").first().css({"height": "100%"});
+                        $(this).next().next().next().find("code").first().css({"width": "100%"});
+                    });
+                });
+                $(this).find("code").first().prepend("<div class=\'zain_min\'>▬</div>");
+                $(".zain_min").click(function() {
+                    $(this).parent().css({"height": "17px"});
+                    $(this).parent().css({"width": "300px"});
+                });
+                $(this).find("code").first().prepend("<div class=\'zain_max\'>✚</div>");
+                $(".zain_max").click(function() {
+                    $(this).parent().css({"height": "100%"});
+                    $(this).parent().css({"width": "100%"});
+                });
+            }, function() {
+                $(".zain_open").remove();
+                $(".zain_min").remove();
+                $(".zain_max").remove();
+            });
+        });
+        $(document).keyup(function(e){
+            if (e.keyCode == 27)  {
+                $(".zain_pre").remove();
+            }
+        });
+    });
+</script>
+
+<!------------------------------------------粒子吸附特效------------------------------------------>
+<!--注1:IE——V11浏览器不支持-->
+<!-- <script type="text/javascript" color="255,100,0" opacity='0.7' zIndex="1" count="100" src="https://files.cnblogs.com/files/chenzhiyin/canvas-nest.js"></script> -->

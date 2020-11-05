@@ -1,0 +1,3 @@
+编号(INT)|0|90	数据库名(string)|0|150	路径(string)|0|250	组(string)|2|80
+456123	db_article志银志银志银志银志银志银志银志银志银志银	./data/db_article志银志银志银志银志银志银志银志银志银志银/	文章
+2345	db_image	./data/db_image/	图片

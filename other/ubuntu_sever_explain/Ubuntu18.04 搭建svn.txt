@@ -1,0 +1,166 @@
+﻿Ubuntu18.04 搭建svn
+2018年07月18日 19:36:27 薛安隆 阅读数：711更多
+个人分类： ubuntu  svn
+1、卸载SVN
+查看自己是否安装了svn
+svn
+可用以下命令进行卸载
+sudo apt-get remove --purge subversion
+(–purge 选项表示彻底删除改软件和相关文件)
+
+2、安装SVN
+安装前先更新一下
+sudo apt-get update
+接下来安装
+sudo apt-get install subversion
+ 
+3、创建SVN版本库
+创建home下的svn文件夹
+sudo mkdir  /home/svn
+创建svn下的repository文件夹
+sudo mkdir  /home/svn/repository
+更改repository的权限（第一次搭建没有赋予权限，客户端访问服务器被拒绝）
+sudo chmod -R 777 /home/svn/repository
+sudo chmod -R 777 repository
+创建版本库
+sudo svnadmin create /home/svn/repository
+sudo svnadmin create /root/svn/repository
+完成后会在repository文件夹下生成以下文件
+然后对db进行权限设置
+sudo chmod -R 777 db
+设置访问权限：需要对conf文件夹下的文件进行修改
+①修改配置文件conf/svnserve.conf
+sudo vim /home/svn/repository/conf/svnserve.conf
+sudo vim conf/svnserve.conf
+#匿名用户可读
+anon-access = none（即不可读）
+#权限用户可写
+auth-access = write
+#密码文件为passwd
+password-db = passwd
+#权限文件为authz
+# authz-db = authz//不需打开
+（去掉前面的#，并且顶格，不然可能会报错）
+②添加访问用户conf/passwd
+sudo vim /home/svn/repository/conf/passwd 
+ vim conf/passwd
+③设置用户权限conf/authz
+sudo vim /home/svn/repository/conf/authz
+[groups]    ###分配组，行首不能有空格
+team1 = zhangsan,lisi   ###在组1中有zhangsan和lisi
+team2 = wangwu            ###在组2中只有wangwu
+
+[svn:/]        ###分配权限，
+zhangsan = rw
+@team1 = rw     ###在组名前需要加上@符号，在用户前不需要加@符号，在team1组中的成员有’读写’的权限
+@team2 = r        ###在team2组中的成员有'读'的权限
+* =             ###其他用户没有任何权限
+4、测试SVN服务器
+①启动服务器
+svnserve -d -r /home/svn
+svnserve -d -r /root/svn
+（-d：表示在后台运行 ，-r：指定服务器的根目录）
+用如下命令查看svnserve是否已经运行
+ps aux | grep svnserve
+（表示服务器已经在后台运行了，这个时候我没就可通过svn://服务器ip/repository从svn客户端访问服务器了）
+②停止服务器
+如果需要关闭服务器，可以用下面的命令
+killall svnserve
+
+=============================================================================================
+阿里云
+=============================================================================================
+手动安装SVN
+本文以CentOS 7.2 64位系统为例，说明如何在CentOS 7.2上安装SVN。
+
+远程连接Linux实例。
+运行以下命令安装SVN。
+yum install subversion
+运行以下命令查看SVN版本。
+svnserve --version
+
+
+按以下步骤创建版本库：
+运行以下命令创建目录。
+mkdir /var/svn
+依次运行以下命令创建版本库。
+cd /var/svn
+svnadmin create /var/svn/svnrepos
+依次运行以下命令查看自动生成的版本库文件。
+cd svnrepos
+ls
+
+
+Subversion目录说明：
+
+db目录：所有版本控制的数据存放文件。
+hooks目录：放置hook脚本文件的目录。
+locks目录：用来追踪存取文件库的客户端。
+format文件：是一个文本文件，里面只放了一个整数，表示当前文件库配置的版本号。
+conf目录：是这个仓库的配置文件（仓库的用户访问账号、权限等）。
+运行命令 cd conf/ 进入conf目录（该SVN版本库配置文件）。返回结果如下：
+authz：是权限控制文件。
+passwd：是账号密码文件。
+svnserve.conf：SVN服务配置文件。
+按以下步骤设置账号密码：
+运行 vi passwd。
+按 i 键进入编辑模式。
+在 [users] 块中添加用户账号和密码，格式：账号=密码，比如示例中的suzhan = redhat（注意等号两端要有一个空格）。
+按 Esc 键退出编辑模式，并输入 :wq 保存并退出。
+
+按以下步骤设置权限：
+运行 vi authz。
+按 i 键进入编辑模式。
+在末尾添加如下代码（其中，r表示读，w表示写）：
+[/]
+suzhan=rw
+按 Esc 键退出编辑模式，并输入 :wq 保存并退出。
+
+按以下步骤修改svnserve.conf文件。
+运行命令 vi svnserve.conf。
+按 i 键进入编辑模式。
+打开以下几个注释（注意每行不能以空格开始，等号两端要有一个空格）：
+anon-access = read #匿名用户可读，您也可以设置 anon-access = none，不允许匿名用户访问。设置为 none，可以使日志日期正常显示
+auth-access = write #授权用户可写
+password-db = passwd #使用哪个文件作为账号文件
+authz-db = authz #使用哪个文件作为权限文件
+realm = /var/svn/svnrepos #认证空间名，版本库所在目录  "realm = /root/svn"
+按 Esc 键退出编辑模式，并输入 :wq 保存并退出。
+
+运行以下命令启动SVN版本库。
+svnserve -d -r /var/svn/svnrepos
+svnserve -d -r /root/svn
+运行命令 ps -ef |grep svn 查看SVN服务是否开启。
+如果返回结果如下图所示，表示SVN服务已经开启。
+
+说明 运行以下命令停止SVN命令。
+killall svnserve
+
+=========================
+ubuntu重启自动启动svn服务
+待解决
+=======================
+=======================
+
+端口查询：
+netstat -nlp|grep 3690
+
+
+//使用：
+cp -Rf ./www/* ./www_bf/
+cp -Rf ./www_bf/* ./www/
+
+cp -Rf ./root/* ./root_bf/
+
+Linux下客户端使用SVN
+将文件checkout到本地目录zain_svn_127.0.0.1
+svn checkout http://120.79.190.204 zain_svn_120.79.190.204
+svn checkout svn://zainzy.com/other/ssh_key ./ssh_key
+svn checkout svn://120.79.190.204 ./
+svn checkout svn://120.79.190.204 ./zain_svn_120.79.190.204 --username root
+svn checkout http://127.0.0.1:3690 ./zain_svn_127.0.0.1 --username root
+svn checkout http://localhost ./localhost
+有修改的时候
+# svn add * //添加文件
+# svn commit -m '这是注释内容' //提交
+# svn update //更新

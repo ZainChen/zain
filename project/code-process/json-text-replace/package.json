@@ -1,0 +1,298 @@
+{
+  "name": "octopus",
+  "productName": "Octopus8",
+  "version": "8.1.3",
+  "buildNumber": "3111",
+  "pageLanguages": ["en-US", "zh-CN", "ja-JP"],
+  "description": "八爪鱼采集器客户端",
+  "author": "深圳视界信息技术有限公司",
+  "private": true,
+  "main": "./app/main.js",
+  "homepage": ".",
+  "DEV": false,
+  "dependencies": {
+    "antd": "3.16.3",
+    "axios": "^0.18.1",
+    "bfj": "6.1.1",
+    "camunda-bpmn-moddle": "^3.2.0",
+    "caniuse-lite": "1.0.30000974",
+    "classnames": "^2.2.6",
+    "crypto": "^1.0.1",
+    "csj": "^1.0.0",
+    "csv-parser": "^2.3.0",
+    "date-fns": "^1.30.1",
+    "debug": "^2.6.6",
+    "electron-dynamic-preload": "^0.3.0",
+    "electron-json-storage": "^4.1.5",
+    "electron-log": "^3.0.1",
+    "electron-updater": "^4.1.2",
+    "exceljs-transform-stream": "^1.2.0",
+    "filenamify": "^3.0.0",
+    "fs-extra": "7.0.1",
+    "iconv-lite": "^0.4.25",
+    "identity-obj-proxy": "3.0.0",
+    "iso8601-duration": "^1.0.6",
+    "joi": "^14.3.1",
+    "js2xmlparser": "^4.0.0",
+    "json-2-csv": "^3.4.2",
+    "jsonpath": "^1.0.3",
+    "jszip": "^3.2.0",
+    "knex": "^0.20.11",
+    "macaddress": "^0.2.9",
+    "minimist": "^1.2.0",
+    "mobx": "^5.8.0",
+    "mobx-react": "^5.4.3",
+    "moment": "^2.24.0",
+    "msnodesqlv8": "0.7.2",
+    "mssql": "^5.0.5",
+    "mysql": "^2.16.0",
+    "needle": "^2.4.0",
+    "node-ipc": "9.1.1",
+    "node-loader": "^0.6.0",
+    "node-machine-id": "^1.1.12",
+    "node-sass": "^4.11.0",
+    "node-uuid": "^1.4.8",
+    "node-xlsx": "^0.14.1",
+    "oae-zh": "^1.2.16",
+    "oap-zh": "^1.1.9",
+    "octopus-atom-browser": "^1.3.7",
+    "octopus-catch-error-decorator": "^1.0.3",
+    "orz-zh": "^1.1.8",
+    "oss-zh": "^1.1.3",
+    "path": "^0.12.7",
+    "puppeteer-core": "^1.13.0",
+    "react": "^16.7.0",
+    "react-app-polyfill": "^0.2.1",
+    "react-beautiful-dnd": "^10.1.1",
+    "react-dev-utils": "^7.0.3",
+    "react-dom": "^16.7.0",
+    "react-gojs": "^4.3.0",
+    "react-infinite-scroller": "^1.2.4",
+    "react-intl-universal": "^1.15.5",
+    "react-resizable": "^1.8.0",
+    "react-split-pane": "^0.1.87",
+    "require-from-string": "^2.0.2",
+    "sqlite": "^3.0.5",
+    "uuid": "^3.3.2",
+    "xlsx-stream-reader": "^1.1.100",
+    "xml2js": "^0.4.19",
+    "xmlbuilder": "^12.0.0",
+    "xmldom": "^0.1.27",
+    "xpath.js": "^1.1.0",
+    "zlib": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.2",
+    "@jest-runner/electron": "^1.1.1",
+    "@svgr/webpack": "4.1.0",
+    "@types/core-js": "2.5.0",
+    "@types/electron-json-storage": "^4.0.0",
+    "@types/event-kit": "^2.4.0",
+    "@types/jest": "^23.3.10",
+    "@types/jsonpath": "^0.2.0",
+    "@types/jszip": "^3.1.5",
+    "@types/minimist": "^1.2.0",
+    "@types/moment": "^2.13.0",
+    "@types/mssql": "^4.0.13",
+    "@types/mysql": "^2.15.5",
+    "@types/node": "^10.12.18",
+    "@types/node-ipc": "9.1.1",
+    "@types/node-uuid": "0.0.28",
+    "@types/node-xlsx": "^0.12.1",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-infinite-scroller": "^1.2.1",
+    "@types/react-beautiful-dnd": "^10.1.1",
+    "@types/react-sticky": "^6.0.3",
+    "@types/sqlite3": "^3.1.5",
+    "@types/ua-parser-js": "^0.7.32",
+    "@types/xml2js": "^0.4.4",
+    "@types/xmldom": "^0.1.29",
+    "aws-sdk": "^2.441.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^9.0.0",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "8.0.5",
+    "babel-plugin-import": "^1.11.0",
+    "babel-plugin-named-asset-import": "^0.3.1",
+    "babel-preset-react-app": "^7.0.1",
+    "case-sensitive-paths-webpack-plugin": "2.2.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "1.0.0",
+    "dotenv": "6.0.0",
+    "dotenv-expand": "4.2.0",
+    "electron": "5.0.4",
+    "electron-builder": "20.44.4",
+    "eslint": "^5.16.0",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-loader": "2.1.1",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-react-hooks": "^1.5.0",
+    "file-loader": "2.0.0",
+    "fork-ts-checker-webpack-plugin-alt": "0.4.14",
+    "html-webpack-plugin": "4.0.0-alpha.2",
+    "iso8601-duration": "^1.0.6",
+    "jest": "^24.1.0",
+    "jest-pnp-resolver": "1.0.2",
+    "jest-resolve": "23.6.0",
+    "jest-watch-typeahead": "^0.2.1",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "0.5.0",
+    "optimize-css-assets-webpack-plugin": "5.0.1",
+    "pnp-webpack-plugin": "1.2.1",
+    "postcss-flexbugs-fixes": "4.1.0",
+    "postcss-loader": "3.0.0",
+    "postcss-preset-env": "6.5.0",
+    "postcss-safe-parser": "4.0.1",
+    "puppeteer-core": "^1.13.0",
+    "react-sticky": "^6.0.3",
+    "resolve": "1.10.0",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.1",
+    "terser-webpack-plugin": "1.2.2",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.4000",
+    "ua-parser-js": "^0.7.19",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "url-loader": "1.1.2",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "3.1.14",
+    "webpack-manifest-plugin": "2.0.4",
+    "webpack-node-externals": "1.7.2",
+    "workbox-webpack-plugin": "3.6.3",
+    "xml2js": "^0.4.19",
+    "xmlbuilder": "^12.0.0"
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "start-all": "cross-env NODE_ENV=development node --trace-warnings ./node_modules/webpack/bin/webpack --config ./config/webpack.config.electron.js --colors && cross-env NODE_ENV=development node --trace-warnings ./node_modules/webpack/bin/webpack --config ./config/webpack.config.renderer.js --colors && electron  . --env dev --entry main",
+    "start-main": "cross-env NODE_ENV=development node --trace-warnings ./node_modules/webpack/bin/webpack --config ./config/webpack.config.electron.js --colors && electron  . --env dev --entry main",
+    "build": "node --max_old_space_size=4096 scripts/build.js",
+    "build-main": "cross-env NODE_ENV=production node --trace-warnings ./node_modules/webpack/bin/webpack --config ./config/webpack.config.electron.js --progress --profile --colors",
+    "test": "node scripts/test.js --env=node",
+    "electron-start": "electron . --env build --entry main",
+    "electron-build-start": "cross-env NODE_ENV=production node --trace-warnings ./node_modules/webpack/bin/webpack --config ./config/webpack.config.electron.js --progress --profile --colors  && electron  . --env build --entry main",
+    "pack": "electron-builder build",
+    "mkinst": "electron-builder --pd pack/win-unpacked",
+    "mkinst32": "electron-builder --pd pack/win-ia32-unpacked",
+    "packall": "node scripts/build.js && npm run build-main && npm run pack",
+    "packall-dev": "node scripts/build.js && npm run start-main && npm run pack",
+    "release": "npm uninstall oae-zh && npm uninstall oss-zh && npm uninstall orz-zh && npm run packall",
+    "get-pkg": "npm i oae-zh && npm i oss-zh && npm i octopus-atom-browser"
+  },
+  "build": {
+    "productName": "Octopus",
+    "appId": "com.skieer.octopus",
+    "copyright": "Copyright © 2020 Skieer",
+    "directories": {
+      "app": "app",
+      "output": "pack"
+    },
+    "win": {
+      "icon": "public/app.ico",
+      "publisherName": "Skieer",
+      "verifyUpdateCodeSignature": false,
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": false,
+      "shortcutName": "八爪鱼采集器 8",
+      "installerLanguages": [
+        "en-US"
+      ]
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "https://www.bazhuayu.com/"
+      }
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "resolver": "jest-pnp-resolver",
+    "setupFiles": [
+      "react-app-polyfill/jsdom"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ],
+    "watchPlugins": [
+      "<rootDir>/node_modules/jest-watch-typeahead/filename.js",
+      "<rootDir>/node_modules/jest-watch-typeahead/testname.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "flow": false,
+          "typescript": true,
+          "useEsMoudle": true
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "libraryDirectory": "lib",
+          "style": true
+        },
+        "ant"
+      ]
+    ]
+  }
+}

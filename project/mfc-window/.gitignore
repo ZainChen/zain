@@ -1,0 +1,15 @@
+*.suo
+run/*.iobj
+run/*.ipdb
+run/*.pdb
+run/*.tmp
+run/*.ilk
+run/*.iobj
+run/*.ipdb
+run/*.pdb
+res/*.aps
+ZainWindow/Debug/
+ZainWindow/Release
+ZainWindow/*.db
+ZainWindow/*.opendb
+ZainWindow/ipch/

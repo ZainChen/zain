@@ -1,0 +1,185 @@
+更新软件源缓存：
+apt-get update
+
+安装常用软件
+1.SSH
+sudo apt-get install openssh-server
+
+查看状态：service ssh status/start/stop/restart
+
+或：/etc/init.d/ssh status/start/stop/retsrt
+
+实际上，service命令就是执行/etc/init.d脚本，二者功能是一样的
+
+2.Vim
+sudo apt-get install vim
+
+3.Tree
+sudo apt-get install tree
+
+4.Git
+sudo apt-get install git
+
+搭建LAMP
+1.安装Apache
+sudo apt-get install apache2
+
+测试： 浏览器访问http://Ubuntu的IP，出现It Works!网页。
+
+查看状态： service apache2 status/start/stop/restart
+
+Web目录： /var/www
+
+安装目录： /etc/apache2/
+
+全局配置： /etc/apache2/apache2.conf
+
+监听端口： /etc/apache2/ports.conf
+
+虚拟主机： /etc/apache2/sites-enabled/000-default.conf
+
+=====================
+6.自定义网站根目录，默认根目录为/var/www
+	我们只需要对apache2在/etc/apache2和/etc/apache2/sites-available下的两个配置文件apache2.conf和000-default.conf两个配置进行修改就行了。
+
+	1).编辑/etc/apache2/apache2.conf这个主配置文件，找到<Directory /var/www/>这个参数，把其中的/var/www/改为自己想自定义的目录。
+
+	2).编辑/etc/apache2/sites-available/000-default.conf这个默认配置文件，找到”DocumentRoot /var/www/html” 这个参数，把其中的/var/www/html同样修改为自己想自定义的目录。
+
+	3).修改完配置后需要重启Apache服务。
+
+注意文件夹权限： 
+开启所有读写权限：sudo chmod -R 777 www
+
+service apache2 restart
+
+=====================
+
+2.安装MySQL
+sudo apt-get install mysql-server mysql-client
+
+测试：mysql -u root -p
+
+查看状态：service mysql status/start/stop/retart
+
+查看监听端口的情况：netstat -tunpl 或 netstat -tap
+=====================
+1.首先输入以下指令：
+sudo cat /etc/mysql/debian.cnf
+运行截图如下：
+# Automatically generated for Debian scripts. DO NOT TOUCH!
+[client]
+host     = localhost
+user     = debian-sys-maint
+password = GBIAbSVrTXiuF9Do
+socket   = /var/run/mysqld/mysqld.sock
+[mysql_upgrade]
+host     = localhost
+user     = debian-sys-maint
+password = GBIAbSVrTXiuF9Do
+socket   = /var/run/mysqld/mysqld.sock
+
+2. 再输入以下指令：
+mysql -u debian-sys-maint -p
+//注意! 
+//这条指令的密码输入是输入第一条指令获得的信息中的 password = ZCt7QB7d8O3rFKQZ 得来。
+//请根据自己的实际情况填写！
+运行截图如下：(注意! 这步的密码输入的是 ZCt7QB7d8O3rFKQZ，密码是由第一条指令获得的信息中的
+
+password = ZCt7QB7d8O3rFKQZ 得来，每个人不一样，请根据自己的实际情况输入，输入就可以得到以下运行情况）
+
+
+
+3. 修改密码，本篇文章将密码修改成 root , 用户可自行定义。
+use mysql;
+// 下面这句命令有点长，请注意。
+update mysql.user set authentication_string=password('Czy19951219') where user='root' and Host ='localhost';
+update user set plugin="mysql_native_password"; 
+flush privileges;
+quit;
+
+4. 重新启动mysql:
+sudo service mysql restart
+mysql -u root -p // 启动后输入已经修改好的密码：root
+=====================
+
+3.安装PHP
+sudo apt-get install php7.2
+
+测试：php7.2 -v
+
+4.安装其他模块
+sudo apt-get install libapache2-mod-php7.2
+sudo apt-get install php7.2-mysql
+
+重启服务
+
+service apache2 restart
+
+service mysql restart
+
+测试Apache能否解析PHP
+
+vim /var/www/html/phpinfo.php
+
+文件中写：<?php echo phpinfo();?>
+
+浏览器访问：http://ubuntu地址/phpinfo.php，出现PHP Version网页
+===================
+其它拓展安装：
+更新软件源缓存：
+
+apt-get update
+
+安装软件
+
+安装 PHP7.2：
+
+apt install php7.2-fpm php7.2-mysql php7.2-curl php7.2-gd php7.2-mbstring php7.2-xml php7.2-xmlrpc php7.2-zip php7.2-opcache -y
+
+设置 PHP
+
+安装完成后，编辑/etc/php/7.2/fpm/php.ini替换换;cgi.fix_pathinfo=1为cgi.fix_pathinfo=0 快捷命令：
+
+sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/' /etc/php/7.2/fpm/php.ini
+
+管理 PHP
+
+安装好了先重启一下！
+
+systemctl restart php7.2-fpm
+
+更多操作：
+
+systemctl restart php7.2-fpm #重启systemctl start php7.2-fpm #启动systemctl stop php7.2-fpm #关闭systemctl status php7.2-fpm #检查状态
+===================
+5.修改权限
+sudo chmod -R 777 /root/
+
+6.安装phpMyAdmin
+sudo apt-get install phpmyadmin
+
+安装：选择apache2，点击确定。下一步选择是要配置数据库，并输入密码。
+
+创建phpMyAdmin快捷方式：sudo ln -s /usr/share/phpmyadmin /root/www
+
+启用Apache mod_rewrite模块：sudo a2enmod rewrite
+
+重启服务：
+
+service php7.2-fpm restart
+service php7.0-fpm restart
+service apache2 restart
+
+测试：浏览器访问：http://ubuntu地址/phpmyadmin
+
+7.配置Apache
+vim /etc/apache2/apache2.conf
+
+添加：
+
+AddType application/x-httpd-php .php .htm .html
+
+AddDefaultCharset UTF-8
+
+重启Apache服务

@@ -1,0 +1,26 @@
+<!------------------------------------------评论列表------------------------------------------>
+<link  type="text/css" rel="stylesheet" href="https://files.cnblogs.com/files/chenzhiyin/feedback.css" />
+
+<!------------------------------------------鼠标点击特效------------------------------------------>
+<script type="text/javascript" src="https://files.cnblogs.com/files/chenzhiyin/mouse.js"></script>
+
+<!------------------------------------------赞助------------------------------------------>
+<script type="text/javascript" src="https://files.cnblogs.com/files/chenzhiyin/tctip-1.0.3.min.js"></script>
+<script>
+    new tctip({
+        top: '20%',
+        button: {
+            id: 3,
+            type: 'zanzhu'
+        },
+        list: [
+            {
+                type: 'alipay',
+                qrImg: 'https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_zfbMoney.png'
+            }, {
+                type: 'wechat',
+                qrImg: 'https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_weMoney.png'
+            }
+        ]
+    }).init()
+</script>

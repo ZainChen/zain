@@ -1,0 +1,180 @@
+###页面定制CSS代码###
+#header{display:none;} /* 将默认的导航头屏蔽掉，这样才能把自己的导航栏加上去 */
+
+/* 定制自己导航栏的样式 */
+#shwtop ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /*去除li前的标注*/
+    background-color: #333;
+    overflow: hidden; /*隐藏溢出的部分，保持一行*/
+}
+#shwtop li {
+    float: left; /*左浮动*/
+}
+#shwtop li a, .dropbtn {
+    display: inline-block; /*设置成块*/
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+}
+/*鼠标移上去，改变背景颜色*/
+#shwtop li a:hover, .dropdown:hover .dropbtn { 
+    /* 当然颜色你可以自己改成自己喜欢的，我还是挺喜欢蓝色的 */
+    background-color: blue;
+}
+#shwtop .dropdown {
+    /*
+    display:inline-block将对象呈递为内联对象，
+    但是对象的内容作为块对象呈递。
+    旁边的内联对象会被呈递在同一行内，允许空格。
+    */
+    display: inline-block;
+}
+#shwtop .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+#shwtop .dropdown-content a {
+    display: block;
+    color: black;
+    padding: 8px 10px;
+    text-decoration:none;
+}
+#shwtop .dropdown-content a:hover {
+    background-color: #a1a1a1;
+}
+#shwtop .dropdown:hover .dropdown-content{
+    display: block;
+}
+
+
+###页首Html代码###
+<!-- 创建新的导航栏，内容可更改为你自己的-->
+<div id="shwtop" >
+    <ul style="margin-left:0px;margin-right: 0px;" class="test11" >
+        <div class="dropdown">
+            <a href="https://www.cnblogs.com/" class="dropbtn">博客园首页</span></a>
+            <div class="dropdown-content">
+
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="http://www.cnblogs.com/shwee/" class="dropbtn">我的首页</span></a>
+            <div class="dropdown-content">
+
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">全部分类</a>
+            <div class="dropdown-content">
+                <!-- <a class="menu" href="这里是你文章或随笔分类的链接地址，自己修改下面同理"> 这里更改下拉具体内容 </a> -->
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217679.html"  >1.Linux基础</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1211712.html"  >2.Python基础</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217691.html"  >3.Python进阶</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217693.html"  >4.项目实战</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217695.html"  >5.人工智能</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1212750.html"  >6.阅读笔记</a>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Linux基础</a>
+            <div class="dropdown-content">
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217679.html"  >1.基础知识</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217679.html"  >2.Linux发行版本</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217679.html"  >3.Linux命令行操作</a>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Python基础</a>
+            <div class="dropdown-content">
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1211712.html"  target="_Blank">1.认识Python</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1211712.html"  target="_Blank">更多...</a>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Python进阶</a>
+            <div class="dropdown-content">
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217691.html"  target="_Blank">1.面向对象</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217691.html"  target="_Blank">2.网络编程</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217691.html"  target="_Blank">更多...</a>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">项目实战</a>
+            <div class="dropdown-content">
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217693.html"  target="_Blank">1.这部分后续更新</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217693.html"  target="_Blank">更多...</a>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">人工智能</a>
+            <div class="dropdown-content">
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217695.html"  target="_Blank">1.机器学习</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217695.html"  target="_Blank">2.深度学习</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217695.html"  target="_Blank">3.计算机视觉</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217695.html"  target="_Blank">4.自然语言处理</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217695.html"  target="_Blank">5.图像处理</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1217695.html"  target="_Blank">更多...</a>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">阅读人生</a>
+            <div class="dropdown-content">
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1212750.html"  target="_Blank">1.学术著作</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1212750.html"  target="_Blank">2.诗词歌赋</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1212750.html"  target="_Blank">3.闲书杂文</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1212750.html"  target="_Blank">4.报刊新闻</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1212750.html"  target="_Blank">5.电影小说</a>
+                <a class="menu" href="http://www.cnblogs.com/shwee/category/1212750.html"  target="_Blank">更多...</a>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">学习资源</a>
+            <div class="dropdown-content">
+                <a class="menu" href="https://docs.djangoproject.com/en/2.0/"  target="_Blank">1.Django2.0官网</a>
+                <a class="menu" href="http://docs.jinkan.org/docs/flask/"  target="_Blank">2.Flask文档</a>
+                <a class="menu" href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html"  target="_Blank">3.Bootstrap教程</a>
+                <a class="menu" href="http://www.django-rest-framework.org/"  target="_Blank">4.REST framework官网</a>
+            </div>
+        </div>
+
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">娱乐休闲</a>
+            <div class="dropdown-content">
+                <a class="menu" href="http://music.163.com/"  target="_Blank">1.云音乐</a>
+                <a class="menu" href="http://music.163.com/"  target="_Blank">2.QQ音乐</a>
+                <a class="menu" href="https://www.bilibili.com/"  target="_Blank">3.bilibili</a>
+                <a class="menu" href="http://yingyu.xdf.cn/list_907_1.html"  target="_Blank">4.双语阅读</a>
+                <a class="menu" href="http://720yun.com/"  target="_Blank">5.全景图片欣赏</a>
+                <a class="menu" href="https://weibo.com/"  target="_Blank">6.微博</a>
+                <a class="menu" href="http://china.nba.com/"  target="_Blank">7.NBA</a>
+                <a class="menu" href="https://www.toutiao.com/"  target="_Blank">8.今日头条</a>
+                <a class="menu" href="https://tieba.baidu.com/f?kw=%C4%DA%BA%AD%B6%CE%D7%D3&fr=ala0&tpl=5"  target="_Blank">9.内涵段子</a>
+            </div>
+        </div>
+    </ul>
+</div>
+
+

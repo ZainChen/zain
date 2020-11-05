@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="res">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="CodeOrigin">
+      <UniqueIdentifier>{b14b3581-22af-4efe-bf2b-f2b8eedd559a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\res\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\res\ZainWindow.rc2">
+      <Filter>res</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\res\ZainWindow.ico">
+      <Filter>res</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\res\ZainWindow.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\code\origin\ZainWindowDlg.h">
+      <Filter>CodeOrigin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\origin\Resource.h">
+      <Filter>CodeOrigin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\origin\stdafx.h">
+      <Filter>CodeOrigin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\origin\targetver.h">
+      <Filter>CodeOrigin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\origin\ZainWindow.h">
+      <Filter>CodeOrigin</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\code\origin\stdafx.cpp">
+      <Filter>CodeOrigin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\origin\ZainWindow.cpp">
+      <Filter>CodeOrigin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\origin\ZainWindowDlg.cpp">
+      <Filter>CodeOrigin</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

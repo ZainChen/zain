@@ -1,0 +1,2091 @@
+<!-- 博客园选择皮肤：darkgreentrip -->
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ZainChen</title>
+    <style>
+.zain {
+    width: 0px;
+    height: 600px;
+    background: #CCC;
+}
+.speak {
+    width: 500px
+}
+
+
+
+
+/******************************************页面定制CSS代码***********************************************/
+/*-----------------------------------------背景颜色或图片-----------------------------------------*/
+/*带有指定的角度的线性渐变*/
+body {
+    background: -webkit-linear-gradient(0deg, rgba(252,154,19,0.6), rgba(252,154,19,0.2)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(0deg, rgba(252,154,19,0.6), rgba(252,154,19,0.2)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(0deg, rgba(252,154,19,0.6), rgba(252,154,19,0.2)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(0deg, rgba(252,154,19,0.6), rgba(252,154,19,0.2)); /* 标准语法 */
+    background: #EEE;
+}
+
+/*-----------------------------------------主页文章预览块样式-----------------------------------------*/
+.forFlow .day {
+    background: rgba(255,255,255,1);
+}
+
+/*-----------------------------------------时间-----------------------------------------*/
+* {
+    /*outline: 1px dashed red;*/
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}
+.wrapper {
+    width: 100%;
+}
+.show {
+    width: 170px;
+    margin: 0 auto;
+}
+.clock {
+    position: relative;
+    float: left;
+    margin: 0px;
+    padding: 10px;
+    /*border: 1px dashed #dbd0a7;*/
+}
+.code {
+    padding: 5px 10px;
+    border: 1px solid #d8d8d8;
+    background: #d8d8d8;
+    color: #988f81;
+}
+
+/*-----------------------------------------头像-----------------------------------------*/
+.headPortrait {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px
+}
+
+/*-----------------------------------------火箭返回顶部按钮-----------------------------------------*/
+#rocket-to-top div {
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 75px;
+}
+#rocket-to-top .level-2 {
+    background: url("https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_button_up_small.png") no-repeat scroll -75px 0 transparent;
+    display: none;
+    height: 125px;
+    opacity: 0;
+    z-index: 1;
+}
+#rocket-to-top .level-3 {
+    background: none repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: block;
+    height: 75px;
+    z-index: 2;
+}
+#rocket-to-top {
+    background: url("https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_button_up_small.png") no-repeat scroll 0 0 transparent;
+    cursor: default;
+    display: block;
+    height: 125px;
+    margin: 0px 0 0;
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+    right: 55px;
+    top: 80%;
+    width: 75px;
+    z-index: 11;
+}
+
+/*-----------------------------------------点赞按钮-----------------------------------------*/
+#div_digg{
+    padding: 5px;
+    border-radius: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 80px;
+    width:80px;
+    z-index:100;
+}
+.diggit{
+    background: url(http://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_good02.png) no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size:100% 100%;
+    width: 60px;
+    height: 60px;
+}
+.diggit:hover {
+    background: url(http://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_good03.png) no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size:100% 100%;
+    width: 60px;
+    height: 60px;
+}
+#div_digg .diggnum{
+    position: absolute;
+    bottom: -20px;
+    left: 6px;
+    background: #D0D0D0;
+    padding: 2px 0;
+    display: block;
+    color: #555;
+    font-size: 12px;
+    text-align: center;
+    width: 60px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    font-weight: bold;
+}
+/* 删除反对按钮,有点邪恶了 */
+.buryit{
+    display: none;
+}
+
+/*-----------------------------------------滚动条-----------------------------------------*/
+::-webkit-scrollbar{
+    width:10px!important;
+    height:10px!important;
+    -webkit-appearance:none;
+}
+::-webkit-scrollbar-thumb{
+    height:5px;border:1px solid transparent;
+    border-top:none;border-bottom:none;
+    -webkit-border-radius:6px;
+    background-color:rgba(0,0,0,.3);
+    background-clip:padding-box;
+}
+
+/*-----------------------------------------自定生成文章目录-----------------------------------------*/
+#sideToolbar {
+    z-index: 1;
+}
+#cnblogs_post_body {
+    color: black;
+    font: 0.875em/1.5em "微软雅黑" , "PTSans" , "Arial" ,sans-serif;
+    font-size: 14px;
+}
+/*标题1*/
+#cnblogs_post_body h1 {
+    color: #fff;
+    padding-left: 15px;
+    background-color: #227447 !important;
+    text-shadow: 2px 2px 3px #222222;
+    font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+/*标题2*/
+#cnblogs_post_body h2 {
+    color: #227447;
+    border-left: 13px solid #227447;
+    padding: 5px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+}
+/*标题3*/
+#cnblogs_post_body h3 {
+    color: #227447;
+    border-left: 5px solid #227447;
+    padding: 5px;
+    background-color: #f5f5f5;
+    font-size: 14px;
+    padding-left: 14px;
+}
+
+/*-----------------------------------------代码高亮(highlight.js)-----------------------------------------*/
+.hljs {
+    position: relative;
+    font-family: "Monaco", "Consulas", "Courier New", Courier, mono, serif;
+    font-size: 12px;
+    display: block;
+    padding: 1px;
+    margin: 0;
+    width: 100%;
+    /*font-weight: 200;*/
+    overflow: auto;
+    min-height: 17px;
+    max-height: 600px;
+    min-width: 300px;
+    max-width: 1000px;
+    resize: both;
+}
+.hljs ul {
+    list-style: decimal;
+    margin: 0px 0px 0 40px !important;
+    padding: 0px;
+}
+.hljs ul li {
+    border-left: 1px solid #ddd !important;
+    padding: 5px !important;
+    margin: 0 !important;
+    line-height: 8px;
+    word-break: break-all;
+    word-wrap: break-word;
+    list-style-type: decimal !important;
+}
+.hljs ul li:nth-of-type(even) {
+    /*background-color: #272822;*/
+    color: inherit;
+}
+#cnblogs_post_body pre {
+    padding-right: 43px;
+    padding-left: 30px;
+}
+pre {
+    white-space: pre;
+}
+pre .zain_open, pre .zain_min, pre .zain_max, .zain_pre .zain_clear, .zain_pre .zain_min_full, .zain_pre .zain_max_full {
+    z-index: 1;
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: #E6B93C;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    color: #000;
+    font-size: 26px;
+    line-height: 16px;
+    font-weight: 900;
+}
+pre .zain_min {
+  right: 60px;
+}
+pre .zain_max {
+  right: 35px;
+}
+.zain_pre .zain_clear, .zain_pre .zain_min_full, .zain_pre .zain_max_full {
+    line-height: 18px;
+}
+.zain_pre .zain_min_full {
+    right: 60px;
+}
+.zain_pre .zain_max_full {
+    right: 35px;
+}
+.zain_pre {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: rgba(0,0,0,.80);
+    transition: all 2s;
+}
+.zain_pre pre {
+    align-self: center;
+    margin: 0 auto; /*水平居中*/
+    /*width: 90%;*/
+}
+pre code::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 8px;
+}
+pre code::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: #535353;
+}
+pre code::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #EDEDED;
+}
+pre code::-webkit-scrollbar-corner {
+  background: #23241F;
+}
+#cnblogs_post_body ul li {
+    list-style-type: none;
+    font-size: 12px
+}
+
+.cnblogs-markdown .hljs,
+#cnblogs_post_body code.hljs {
+  font-family: "Monaco",sans-serif!important;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em !important;
+  background-color: #23241f !important;
+  color: #f8f8f2;
+}
+.cnblogs-markdown code {
+    font-family: "Monaco",sans-serif!important;
+    border: 0px solid #ccc!important;
+    border-radius: 10px!important;
+}
+
+
+
+
+/*-----------------------------------------文章签名及版权声明-----------------------------------------*/
+#MySignature {
+    border: solid 2px red;
+    padding: 10px;
+    border-top: 2px solid #ccc;
+    padding-top: 20px;
+    background: #272822 url(https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_info.png) no-repeat scroll 15px 50%;
+    padding-left: 80px;
+    color: #EEE;
+    word-wrap: break-all;
+}
+#MySignature div {
+    line-height: 25px;
+}
+#MySignature a {
+    color: #FC9A13;
+}
+
+/*-----------------------------------------侧边栏操作按钮-----------------------------------------*/
+/*侧边栏置顶*/
+#sideBarTop,
+#sideBarHide,
+#sideBarMin {
+    z-index: 10;
+    position: fixed;
+    color: white;
+    padding: 10px 10px;
+    left: 0px;
+    top: 300px;
+    cursor: pointer;
+    opacity: 1;
+    background-color: rgba(70,160,255,0.8);
+}
+/*侧边栏隐藏*/
+#sideBarHide {
+    top: 345px;
+}
+/*侧边栏缩小*/
+#sideBarMin {
+    top: 390px;
+}
+
+/*-----------------------------------------侧边栏ul及li样式-----------------------------------------*/
+.catListPostCategory,
+.catListPostArchive,
+.catListImageCategory,
+.catListTag {
+    display: inline-block;
+    width: 100%;
+}
+.catListPostCategory ul,
+.catListPostArchive ul,
+.catListImageCategory ul,
+.catListTag ul {
+    margin-top: -10px;
+}
+/*.search,  搜索框*/
+/*.newsItem,  公告*/
+.catListPostCategory li,  /*随笔分类*/
+.catListPostArchive li,  /*随笔档案*/
+.catListImageCategory li,  /*相册*/
+.catListTag li  /*我的标签*/
+/*.catListView,  阅读排行榜+推荐排行榜*/
+/*.catListBlogRank  积分与排名*/ {
+    float: left;
+    margin-bottom: 6px;
+    margin-right: 5px;
+    background: rgba(252,154,19,0.2);
+    color: rgba(252,154,19,1);
+    width: 110px;
+    text-align: center;
+    border-radius: 10px;
+}
+.catListPostCategory a,
+.catListPostArchive a,
+.catListImageCategory a,
+.catListTag a {
+    color: #FFF;
+    display: inline-block;
+    width: 100%;
+    background: rgba(252,154,19,0.6);
+    border-radius: 10px;
+    transition: all .5s;
+    -webkit-transition: all 0.2s; /* Safari */
+}
+.catListPostCategory a:hover,
+.catListPostArchive a:hover,
+.catListImageCategory a:hover,
+.catListTag a:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+    -ms-transform:scale(1.1);     /* IE 9 */
+    -moz-transform:scale(1.1);     /* Firefox */
+    -webkit-transform:scale(1.1); /* Safari 和 Chrome */
+    -o-transform:scale(1.1);
+}
+
+<<<<<<< .mine
+/*-----------------------------------------鼠标选中样式-----------------------------------------*/
+::selection {
+background: rgba(204,73,51, 1);
+color: #ffffff;
+}
+::-moz-selection {
+background: rgba(204,73,51, 1);
+color: #ffffff;
+}
+::selection {
+background: rgba(204,73,51, 1);
+color: #ffffff;
+}
+::-moz-selection {
+background: rgba(204,73,51, 1);
+color: #ffffff;
+}
+||||||| .r116
+=======
+/*-----------------------------------------鼠标选中样式-----------------------------------------*/
+::selection {
+    background: rgba(204,73,51, 1);
+    color: #ffffff;
+}
+::-moz-selection {
+    background: rgba(204,73,51, 1);
+    color: #ffffff;
+}
+::selection {
+    background: rgba(204,73,51, 1);
+    color: #ffffff;
+}
+::-moz-selection {
+    background: rgba(204,73,51, 1);
+    color: #ffffff;
+}
+>>>>>>> .r122
+
+
+
+
+
+
+
+
+
+/*-----------------------------------------模板CSS,Zain整理-----------------------------------------*/
+/*-----响应式布局-----*/
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 13px;
+    }
+}
+
+
+
+
+
+/*-----普通布局-----*/
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0px;
+    color: #444;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    font-size: 14px;
+    text-shadow: 0 0 1px transparent;
+    color: #505050;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+}
+h1 {
+    font-size: 1.8em;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.3em;
+}
+a {
+    text-decoration: none;
+    color: #CC6600;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+.c_b_p_desc a {  /*摘要样式*/
+    margin-left: -5px;
+}
+
+.postTitle a {
+    color: #CC6600;
+    font-weight: bold;
+}
+
+#cnblogs_post_body p {
+    margin: 0px auto;
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+
+/*留言输入框功能按钮样式*/
+.commentbox_title {
+    width: 100%;
+}
+div.commentform input.author {
+    width: 200px;
+}
+
+
+
+
+
+/*-----------------------------------------模板CSS,待整理-----------------------------------------*/
+@font-face {
+font-family: 'FontAwesome';
+font-style: normal;
+font-weight: normal;
+}
+#home{
+margin: 0 auto;
+width: 85%;
+background-color: #fff;
+padding: 30px;
+margin-top: 0px;
+margin-bottom: 0px;
+box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+border-radius: 10px;
+background: rgba(255,255,255,0.7);
+}
+#tbCommentBody {width: 100%;}
+#blogTitle {width:23%;margin-top: -10px;text-align: center;}
+.alignright {float: right;}
+#header, #main, #footer {width: 100%;margin: 0 auto;}
+#mainContent {
+width: 75%;
+float: right;
+margin-left: 10px;
+}
+@media screen and (max-width: 1260px) {
+#main-col {
+width: 100%;
+margin-right: -300px;
+}
+}
+@media screen and (max-width: 900px) {
+#main-col {
+margin-right: 0;
+float: none;
+}
+}
+@media screen and (max-width: 1260px) {
+#wrapper {
+margin-right: 300px;
+}
+}
+@media screen and (max-width: 900px) {
+#wrapper {
+margin-right: 0;
+}
+}
+#header {
+text-shadow: 0 0 1px #fff;
+margin: 20px auto 30px;
+position: relative;
+height: 60px;
+color: #999;
+}
+#header a {
+color: #999;
+}
+#header a:hover {
+color: #2B579A;
+text-decoration: none;
+}
+#header h1 {
+font-weight: normal;
+font-size: 30px;
+}
+#header h2 {
+font-weight: normal;
+font-size: 0.9em;
+margin-top: 10px;
+margin-left: 30px;
+}
+#header #navigator {
+font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+width: 100%;
+font-size: 16px;
+border-bottom: 1px solid #ededed;
+border-top: 1px solid #ededed;
+height: 50px;
+line-height: 50px;
+clear: both;
+margin-top: 25px;
+float: left;
+}
+#header #navigator ul {
+list-style: none;
+}
+#header #navigator ul li {
+float: left;
+width: 10%;
+text-align: center;
+margin-right: 15px;
+}
+#header .blogStats {
+float: right;
+font-size: 13px;
+}
+.topicListFooter {
+margin-top:30px;
+margin-bottom: 30px;
+margin-right: 0 !important;
+}
+.topicListFooter a {
+display: inline !important;
+padding: 10px 20px;
+background: #ddd;
+color: #999;
+font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+text-shadow: 0 0 1px #fff;
+border-radius: 5px;
+}
+.topicListFooter a:hover {
+background: #258fb8;
+color: #fff;
+text-decoration: none;
+text-shadow: none;
+}
+.topicListFooter .prev:before {
+content: '\f053';
+padding-right: 10px;
+font-family: FontAwesome;
+}
+.topicListFooter .next:after {
+content: '\f054';
+padding-left: 10px;
+font-family: FontAwesome;
+}
+article {
+-webkit-box-shadow: 1px 2px 3px #ddd;
+box-shadow: 1px 2px 3px #ddd;
+background: #fff;
+}
+article.page {
+padding-left: 20px;
+}
+article.page .icon {
+display: none;
+}
+.postIcon:before {
+content: '\f016';
+}
+article.photo .icon:before {
+content: '\f030';
+}
+article.link .icon:before {
+content: '\f0c1';
+}
+article.link .title a:after {
+content: '\f08e';
+color: #999;
+font: 12px FontAwesome;
+padding-left: 10px;
+vertical-align: super;
+}
+/******************************************以下自定义样式***********************************************/
+.pager{
+border-bottom: 1px dashed #ddd;
+padding-bottom: 30px;
+margin-bottom: -10px;
+}
+#blog-calendar{
+width:0px;
+height:0px;
+display: none !important;
+}
+#TopViewPostsBlock ul li{
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+width: 100%;
+display: inline-block;
+height: 30px;
+line-height: 30px;
+}
+.day .dayTitle{
+display: none !important;
+}
+/* 去掉广告 */
+#ad_t2,#opt_under_post,.c_ad_block,#under_post_news,#under_post_kb{
+display: none !important;
+}
+/******************************************以上自定义样式***********************************************/
+.postTitle, .entrylistPosttitle {
+font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+font-size: 1.8em;
+padding: 20px 20px 15px 0px;
+background: #fff;
+border-radius: 10px 10px 0px 0px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.entrylistPostSummary, .postCon, .postBody {
+padding: 0 0px 5px 0px;
+-webkit-box-shadow: 1px 2px 3px #ddd;
+box-shadow: 0 2px 0 #ddd;
+background: #fff;
+position: relative;
+}
+.postDesc, .entrylistItemPostDesc {
+padding: 0px 20px 15px 0px;
+color: #999;
+font-size: 0.9em;
+line-height: 16px;
+position: relative;
+min-height: 16px;
+background: #fff;
+border-bottom: 1px dashed #ccc;
+}
+/* 去掉博客园自带日历控件 */
+#blog-calendar {
+display: none;
+}
+@media screen and (max-width: 600px) {
+.postCon {
+padding-left: 0px;
+}
+}
+.postIcon {
+height: 0px;
+margin-right: 25px;
+position: relative;
+top: 25px;
+left: 25px;
+color: #2B579A;
+}
+@media screen and (max-width: 600px) {
+article header .icon {
+display: none;
+}
+}
+.postIcon:before {
+position: absolute;
+font: 32px FontAwesome;
+top: 0;
+left: 0;
+width: 32px;
+text-align: center;
+}
+article header time {
+color: #999;
+font: 0.9em "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+margin-bottom: 5px;
+display: block;
+line-height: 1;
+}
+article header .title {
+font-weight: normal;
+}
+article header .title a {
+color: #444;
+}
+article header .title a:hover {
+color: #2B579A;
+text-decoration: none;
+}
+#cnblogs_post_body {
+text-align: justify;
+line-height: 1.6;
+}
+blockquote {
+    border: 0px solid #efefef;
+}
+#cnblogs_post_body p,
+#cnblogs_post_body blockquote,
+#cnblogs_post_body ul,
+#cnblogs_post_body ol,
+#cnblogs_post_body dl,
+#cnblogs_post_body table,
+#cnblogs_post_body iframe,
+#cnblogs_post_body h3,
+#cnblogs_post_body h4,
+#cnblogs_post_body h5,
+#cnblogs_post_body h6,
+#cnblogs_post_body .video-container {
+margin-top: 0px;
+}
+#cnblogs_post_body blockquote {
+    border-left: 8px solid #dfe2e5;
+    padding: 15px 15px 5px 15px;
+    color: #777777;
+    font-size: 1.3em;
+    background: #eee;
+}
+#cnblogs_post_body blockquote footer {
+border-top: none;
+font-size: 0.8em;
+line-height: 1;
+margin: 20px 0 0;
+padding-top: 0;
+}
+#cnblogs_post_body blockquote footer cite:before {
+content: '—';
+color: #ccc;
+padding: 0 0.5em;
+}
+#cnblogs_post_body code,
+#cnblogs_post_body pre {
+font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+}
+#cnblogs_post_body code {
+/*background: #eee;*/
+/*color: #666;*/
+padding: 0 5px;
+margin: 0 2px;
+font-size: 0.9em;
+border: 1px solid #ddd;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+}
+#cnblogs_post_body pre {
+/*background: #eee;*/
+/*overflow: auto;*/
+/*padding: 7px 15px;*/
+-webkit-border-radius: 2px;
+border-radius: 2px;
+line-height: 0.1;
+}
+#cnblogs_post_body pre code {
+/*background: none;*/
+padding: 0;
+margin: 0;
+border: none;
+-webkit-border-radius: 0;
+border-radius: 0;
+}
+#cnblogs_post_body ul ul,
+#cnblogs_post_body ol ul,
+#cnblogs_post_body dl ul,
+#cnblogs_post_body ul ol,
+#cnblogs_post_body ol ol,
+#cnblogs_post_body dl ol,
+#cnblogs_post_body ul dl,
+#cnblogs_post_body ol dl,
+#cnblogs_post_body dl dl {
+margin-top: 0;
+}
+#cnblogs_post_body h1,
+#cnblogs_post_body h2 {
+font-weight: bold;
+border-bottom: 1px solid #ddd;
+padding-bottom: 0px;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+#cnblogs_post_body h4,
+#cnblogs_post_body h5,
+#cnblogs_post_body h6 {
+/*font-weight: normal;*/
+background: #eee;
+border-radius: 10px;
+color: #000;
+font-family: "微软雅黑" , "宋体" , "黑体" ,Arial;
+min-height: 15px;
+line-height: 15px;
+margin: 0px 0px !important;
+padding: 8px;
+opacity: 0.8;
+border: 1px dashed #aaa;
+font-size: 14px;
+}
+#cnblogs_post_body h4 {
+padding-left:20px !important;
+color:green !important;
+}
+.postBody img,
+.entrylistPostSummary img, .postCon img,
+.postBody video {
+max-width: 100%;
+/*height: auto;*/
+height: 40px;
+border: none;
+}
+#cnblogs_post_body iframe {
+border: none;
+}
+#cnblogs_post_body .caption {
+display: block;
+margin-top: 5px;
+color: #999;
+position: relative;
+font-size: 0.9em;
+padding-left: 25px;
+}
+#cnblogs_post_body .caption:before {
+content: '\f040';
+position: absolute;
+font: 1.3em FontAwesome;
+position: absolute;
+left: 0;
+top: 3px;
+}
+#cnblogs_post_body .video-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+}
+#cnblogs_post_body .video-container iframe,
+#cnblogs_post_body .video-container object,
+#cnblogs_post_body .video-container embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+margin-top: 0;
+}
+#cnblogs_post_body .pullquote {
+float: right;
+border: none;
+padding: 0;
+margin: 1em 0 0.5em 1.5em;
+text-align: left;
+width: 45%;
+font-size: 1.5em;
+}
+#blog-comments-placeholder, #comment_form {
+padding: 20px;
+background: #fff;
+-webkit-box-shadow: 1px 10px 10px #ddd;
+box-shadow: 10px 10px 10px #ddd;
+margin-bottom: 50px;
+border: 1px solid #ccc;
+padding-top:0;
+}
+.feedback_area_title {
+margin-bottom: 15px;
+font-size: 1.8em;
+}
+.feedbackItem {
+border-bottom: 1px dashed #CCC;
+margin-bottom: 10px;
+padding: 5px;
+}
+.color_shine {
+background: rgb(226, 242, 255);
+}
+.feedbackItem:hover {
+-webkit-animation-name: color_shine;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: infinite;
+}
+#comment_form .title {
+font-weight: normal;
+margin-bottom: 15px;
+}
+#ad_under_post_holder {
+display: none;
+}
+.entrylistTitle {
+color: #999;
+font-weight: normal;
+margin-bottom: 30px;
+text-shadow: 0 0 1px #fff;
+}
+.entrylistTitle:before {
+font-family: FontAwesome;
+content: '\8';
+padding-right: 15px;
+}
+.archive {
+-webkit-box-shadow: 1px 2px 3px #ddd;
+box-shadow: 1px 2px 3px #ddd;
+border-bottom: 1px solid #ddd;
+margin-bottom: 50px;
+}
+.archive article {
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+.archive article .post-content {
+margin-bottom: 0;
+}
+#sideBar{
+width: 22%;
+line-height: 1.8em;
+float: left;
+}
+@media screen and (max-width: 900px) {
+#sideBar {
+float: left;
+width: 100%;
+}
+#mainContent {
+width: 100%;
+}
+}
+.catListLink,
+.catListMyTeams,
+/*.catListComment,*/
+.catListFeedback {
+display: none;
+}
+.search,
+.newsItem,
+.catListPostCategory,
+.catListPostArchive,
+.catListImageCategory,
+.catListTag,
+.catListView,
+.catListBlogRank,
+.catListComment {
+background: #fff;
+-webkit-box-shadow: 1px 2px 3px #ddd;
+box-shadow: 10px 10px 10px #ddd;
+margin-bottom: 30px;
+word-wrap: break-word;
+border-radius: 10px;
+margin-top: 10px;
+border: 1px solid #ddd;
+}
+#blog-sidecolumn h3, .newsItem h3 {
+padding: 10px 20px;
+font-size: 1em;
+border-bottom: 1px solid #ddd;
+font-weight: normal;
+}
+#blog-sidecolumn ul, .newsItem #blog-news {
+font-size: 0.9em;
+padding: 15px 20px;
+}
+#blog-sidecolumn ul,
+#blog-sidecolumn ol,
+#blog-sidecolumn dl {
+list-style: none;
+}
+#blog-sidecolumn ul ul,
+#blog-sidecolumn ol ul,
+#blog-sidecolumn dl ul,
+#blog-sidecolumn ul ol,
+#blog-sidecolumn ol ol,
+#blog-sidecolumn dl ol,
+#blog-sidecolumn ul dl,
+#blog-sidecolumn ol dl,
+#blog-sidecolumn dl dl {
+/*list-style: disc;*/
+margin-left: 20px;
+}
+#q {
+background: #fff;
+font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+font-style: italic;
+font-size: 1em;
+padding: 10px 15px;
+border: 1px solid #ddd;
+width: 100%;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+color: #999;
+height: 100%;
+}
+#q:focus {
+color: #444;
+}
+/*隐藏搜索框中的无用组件*/
+.mySearch {
+display: none;
+}
+
+#sideBar .tag small {
+margin-left: 15px;
+color: #999;
+}
+#sideBar .tag small:before {
+content: '(';
+}
+#sideBar .tag small:after {
+content: ')';
+}
+#sideBar .twitter li {
+border-bottom: 1px solid #ddd;
+padding: 15px 20px;
+font-size: 0.9em;
+}
+#sideBar .twitter li:last-of-type {
+border-bottom: none;
+}
+#sideBar .twitter small {
+display: block;
+margin-top: 10px;
+color: #999;
+line-height: 1;
+}
+#sideBar .tagcloud .entry {
+padding-right: 5px;
+}
+#sideBar .tagcloud a {
+margin-right: 10px;
+display: inline-block;
+}
+#footer {
+color: #999;
+margin-bottom: 50px;
+font: 0.9em/1.6 "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+text-shadow: 0 0 1px #fff;
+text-align:center;
+margin: 30px 0px 50px;
+}
+.entry .gist {
+background: #eee;
+border: 1px solid #ddd;
+margin-top: 15px;
+padding: 7px 15px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+text-shadow: 0 0 1px #fff;
+line-height: 1.6;
+overflow: auto;
+color: #666;
+}
+.entry .gist .gist-file {
+border: none;
+font-family: inherit;
+margin: 0;
+font-size: 0.9em;
+}
+.entry .gist .gist-file .gist-data {
+background: none;
+border-bottom: none;
+}
+.entry .gist .gist-file .gist-data pre {
+padding: 0 !important;
+font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+}
+.entry .gist .gist-file .gist-meta {
+background: none;
+color: #999;
+margin-top: 5px;
+padding: 0;
+text-shadow: 0 0 1px #fff;
+font-size: 100%;
+}
+.entry .gist .gist-file .gist-meta a {
+color: #2B579A;
+}
+.entry .gist .gist-file .gist-meta a:visited {
+color: #2B579A;
+}
+figure.highlight {
+background: #eee;
+border: 1px solid #ddd;
+margin-top: 15px;
+padding: 7px 15px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+text-shadow: 0 0 1px #fff;
+line-height: 1.6;
+overflow: auto;
+position: relative;
+font-size: 0.9em;
+}
+figure.highlight figcaption {
+color: #999;
+margin-bottom: 5px;
+text-shadow: 0 0 1px #fff;
+}
+figure.highlight figcaption a {
+position: absolute;
+right: 15px;
+}
+figure.highlight pre {
+border: none;
+padding: 0;
+margin: 0;
+}
+figure.highlight table {
+margin-top: 0;
+border-spacing: 0;
+}
+figure.highlight .gutter {
+color: #999;
+padding: 7px 10px 7px 5px !important;
+border-right: 1px solid #ddd;
+text-align: right;
+}
+figure.highlight .code {
+padding: 7px 7px 7px 10px !important;
+border-left: 1px solid #fff;
+color: #666;
+}
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .doctype,
+pre .pi,
+pre .lisp .string,
+pre .javadoc {
+color: #93a1a1;
+font-style: italic;
+}
+pre .keyword,
+pre .winutils,
+pre .method,
+pre .addition,
+pre .css .tag,
+pre .request,
+pre .status,
+pre .nginx .title {
+color: #859900;
+}
+pre .number,
+pre .command,
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula,
+pre .regexp,
+pre .hexcolor {
+color: #2aa198;
+}
+pre .title,
+pre .localvars,
+pre .chunk,
+pre .decorator,
+pre .built_in,
+pre .identifier,
+pre .vhdl,
+pre .literal,
+pre .id {
+color: #268bd2;
+}
+pre .attribute,
+pre .variable,
+pre .lisp .body,
+pre .smalltalk .number,
+pre .constant,
+pre .class .title,
+pre .parent,
+pre .haskell .type {
+color: #b58900;
+}
+pre .preprocessor,
+pre .preprocessor .keyword,
+pre .shebang,
+pre .symbol,
+pre .symbol .string,
+pre .diff .change,
+pre .special,
+pre .attr_selector,
+pre .important,
+pre .subst,
+pre .cdata,
+pre .clojure .title {
+color: #cb4b16;
+}
+pre .deletion {
+color: #dc322f;
+}
+.feedbackManage {
+width: 160px;
+position: absolute;
+right: 0;
+text-align: right;
+}
+.cnblogs_code_toolbar {
+display: none;
+}
+#cnblogs_post_body {
+overflow: hidden;
+}
+#cnblogs_post_body ol {
+padding-left: 40px;
+}
+#cnblogs_post_body ul {
+margin-left: 0px;
+}
+.fixedReadRank {
+position: fixed;
+top: 20px;
+width: 270px;
+}
+.fixedRecRank {
+position: fixed;
+top: 360px;
+width: 270px;
+}
+figure.highlight {
+margin-top: 0;
+padding: 0;
+}
+figure table {
+width: 100%;
+margin: 0 !important;
+}
+#cnblogs_post_body pre {
+/*padding: 0;*/
+}
+#cnblogs_post_body th,
+#cnblogs_post_body td {
+padding: 0;
+}
+.cnblogs_code pre {
+padding: 7px 15px !important;
+background: #f5f5f5;
+border: 0;
+margin-top: 0;
+}
+.cnblogs_code th {
+border: 1px solid silver;
+padding: 3px;
+}
+.cnblogs_code {
+padding: 0;
+}
+/*评论标题*/
+.feedback_area_title {
+padding:10px;
+font-size:24px;
+font-weight:bold;
+color:#aaa;
+border-bottom:1px dashed #ccc;
+}
+.feedbackListSubtitle {
+font-size:12px;
+color:#888;
+}
+.feedbackListSubtitle a {
+color:#888;
+}
+.comment_quote {
+background: #eee;
+padding: 15px;
+border: 1px dashed #aaa;
+border-radius: 5px;
+}
+#commentform_title {
+color:#aaa;
+background-image:none;
+background-repeat:no-repeat;
+margin-bottom:10px;
+padding:10px 20px 10px 10px;
+font-size:24px;
+font-weight:bold;
+border-bottom:1px dashed #ccc;
+}
+/*评论框*/
+#comment_form {
+margin:10px 0;
+padding:25px;
+border-radius: 10px;
+height: 343px;
+overflow: hidden;
+}
+.commentform {
+margin:10px 0;
+padding:10px 20px;
+background:#fff;
+}
+/*评论输入域*/
+#tbCommentBody {
+font-family:'MIcrosoft Yahei';
+margin-top:10px;
+background:white;
+color:#333;
+border:2px solid #fff;
+box-shadow:inset 0 0 8px #aaa;
+height:120px;
+font-size:14px;
+min-height:120px;
+border-radius: 10px;
+}
+/*评论条目*/
+.feedbackItem {
+font-size:14px;
+line-height:24px;
+margin:10px 0;
+padding:20px;
+padding-top:5px;
+}
+.feedbackListSubtitle {
+font-weight:normal;
+}
+
+/*green_channel*/
+#green_channel {
+text:align:right;
+padding-left:0px;
+font-weight:normal;
+font-size:13px;
+width:100%;
+border:1px dashed #ccc;
+color:#fff;
+border-radius:4px;
+margin:5px auto;
+}
+@media screen and (max-width: 768px) {
+body {
+font-size: 13px;
+}
+#main{
+padding:0px !important;
+}
+#mainContent{
+width: 100%;
+float: left;
+margin: 0px 2%;
+}
+#blogTitle {
+width: 100%;
+float:none;
+margin: 20px auto 0 !important;
+}
+#header {
+height:auto !important;
+margin: 20px auto 5px;
+}
+#header #navigator {
+width: 100%;
+text-align: center;
+float:none;
+}
+#header #navigator ul {
+width: 100%;
+margin-left: 6%;
+}
+#header #navigator ul li {
+float: left;
+width: 25%;
+text-align: center;
+margin-right:0px;
+}
+.postTitle, .entrylistPosttitle {
+font-size:14px;
+padding: 20px 20px 15px 0px;
+}
+.postDesc, .entrylistItemPostDesc {
+padding: 0px 20px 15px 0px;
+}
+#green_channel {
+padding:0px !important;
+}
+}
+#blog-news label {
+box-shadow:5px 5px 5px #cccccc;
+text-shadow:5px 5px 5px #cccccc;
+border-radius:5px;
+}
+div.commentform textarea.comment_textarea {
+padding: 10px;
+}
+#tbCommentBody{
+width:98%;
+}
+#cnblogs_post_body h3:hover {
+/*color: green;
+font-size: large;
+font-weight: bold;*/
+}
+/* 文章title自定义带动画样式 */
+.postTitle,
+.entrylistPosttitle {
+font-family: "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
+clear: both;
+background-color: #F1F1F1;
+margin-bottom: 8px;
+padding-top: 5px;
+padding-bottom: 5px;
+margin-top: 20px;
+border-left: 15px solid #FF9900;
+padding-left: 0px;
+font-size: 20px;
+border-radius:0px;
+}
+.postTitle a:hover,
+.entrylistPosttitle a:hover {
+text-decoration: none;
+margin-left: 20px;
+color: #227447;
+}
+.postTitle a:link,
+.postTitle a:visited,
+.postTitle a:active,
+.entrylistPosttitle a:link,
+.entrylistPosttitle a:visited,
+.entrylistPosttitle a:active {
+transition: all 0.2s linear 0s;
+}
+
+
+
+
+
+    </style>
+</head>
+<!-- <body class="postBody home"> -->
+<body class="home">
+
+<pre>
+<code class="c++">sudo apt-get install git  //安装git
+sudo adduser git  //创建一个git用户，用来运行git服
+//创建证书登录：收集所有需要登录的用户的公钥，就是他们自己的id_rsa.pub文件，把所有公钥导入到/home/git/.ssh/authorized_keys文件里，一行一个。
+sudo git init --bare sample.git  //初始化Git仓库：先选定一个目录作为Git仓库，假定是/zaingit/sample.git，在/zaingit目录下输入命令
+sudo chown -R git:git sample.git  //把所有者改为git用户
+//禁用shell登录:编辑/etc/passwd文件:类似"git:x:1000:1000:,,,:/home/git:/bin/bash"改为"git:x:1000:1000:,,,:/home/git:/usr/bin/git-shell"
+git clone git@zainzy.com:/zaingit/sample.git  //克隆远程仓库,在各自的电脑上运行(显示下列内容成功:Cloning into 'sample'...\nwarning: You appear to have cloned an empty repository.)</code>
+</pre>
+
+<div class="zain">
+<div class="speak">
+<div id="blog-comments-placeholder"><div id="comments_pager_top"></div>
+<br>
+<div class="feedback_area_title">评论列表</div>
+<div class="feedbackNoItems"></div> 
+<div class="feedbackItem">
+<div class="feedbackListSubtitle">
+<div class="feedbackManage">
+&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3529836,'Vc1nAJ9HP48RX6vnHV5MkczVAxuInBEbPJFdI+dVMCIZCNZYhVX5gg==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3529836,'Vc1nAJ9HP48RX6vnHV5MkczVAxuInBEbPJFdI+dVMCIZCNZYhVX5gg==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(3529836,this, 5955026)">删除</a></span>
+</div>
+<a href="#3529836" class="layer">#1楼</a><a name="3529836" id="comment_anchor_3529836"></a>  <span class="comment_date">2016-10-13 09:06</span> <a id="a_comment_author_3529836" href="http://home.cnblogs.com/u/1041388/" target="_blank">xiaoqi_dream</a> <a href="http://msg.cnblogs.com/send/xiaoqi_dream" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+</div>
+<div class="feedbackCon">
+<div id="comment_body_3529836" class="blog_comment_body">给你一个评论</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3529836,'Digg',this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3529836,'Bury',this)">反对(0)</a></div>
+</div>
+</div>
+<div class="feedbackItem">
+<div class="feedbackListSubtitle">
+<div class="feedbackManage">
+&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3529895,'RS7hJkKZA0acQ8D46dPOPld1ttwrCfN3SQ99U3UFglRNsKN+aVtRKg==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3529895,'RS7hJkKZA0acQ8D46dPOPld1ttwrCfN3SQ99U3UFglRNsKN+aVtRKg==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(3529895,this, 5955026)">删除</a></span>
+</div>
+<a href="#3529895" class="layer">#2楼</a><a name="3529895" id="comment_anchor_3529895"></a>  <span class="comment_date">2016-10-13 09:45</span> <a id="a_comment_author_3529895" href="https://www.cnblogs.com/LvTea/" target="_blank">绿茶丶咖啡</a> <a href="http://msg.cnblogs.com/send/%E7%BB%BF%E8%8C%B6%E4%B8%B6%E5%92%96%E5%95%A1" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+</div>
+<div class="feedbackCon">
+<div id="comment_body_3529895" class="blog_comment_body">截图很详细，顶一个。</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3529895,'Digg',this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3529895,'Bury',this)">反对(0)</a></div><span id="comment_3529895_avatar" style="display:none;">http://pic.cnblogs.com/face/531628/20130523092214.png</span>
+</div>
+</div>
+<div class="feedbackItem">
+<div class="feedbackListSubtitle">
+<div class="feedbackManage">
+&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return ReplyComment(3530222,'tfpk88HmTfuUDHT5UTsbNoRcFl5VcIHjs0XWWqHXRu7RKLzhwDGzFA==')">回复</a><a href="javascript:void(0);" onclick="return QuoteComment(3530222,'tfpk88HmTfuUDHT5UTsbNoRcFl5VcIHjs0XWWqHXRu7RKLzhwDGzFA==')">引用</a><a href="javascript:void(0);" onclick="return DelComment(3530222,this, 5955026)">删除</a></span>
+</div>
+<a href="#3530222" class="layer">#3楼</a><a name="3530222" id="comment_anchor_3530222"></a>  <span class="comment_date">2016-10-13 14:17</span> <a id="a_comment_author_3530222" href="https://www.cnblogs.com/-walker/" target="_blank">逗伴不是瓣</a> <a href="http://msg.cnblogs.com/send/%E9%80%97%E4%BC%B4%E4%B8%8D%E6%98%AF%E7%93%A3" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+</div>
+<div class="feedbackCon">
+<div id="comment_body_3530222" class="blog_comment_body">点一下</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3530222,'Digg',this)">支持(1)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3530222,'Bury',this)">反对(0)</a></div><span id="comment_3530222_avatar" style="display:none;">http://pic.cnblogs.com/face/841362/20161108131728.png</span>
+</div>
+</div>
+<div class="feedbackItem">
+<div class="feedbackListSubtitle">
+<div class="feedbackManage">
+&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return GetCommentBody(3530772)">修改</a><a href="javascript:void(0);" onclick="return DelComment(3530772,this, 5955026)">删除</a></span>
+</div>
+<a href="#3530772" class="layer">#4楼</a><a name="3530772" id="comment_anchor_3530772"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2016-10-14 02:51</span> <a id="a_comment_author_3530772" href="https://www.cnblogs.com/chenzhiyin/" target="_blank">志银</a> <a href="http://msg.cnblogs.com/send/%E5%BF%97%E9%93%B6" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+</div>
+<div class="feedbackCon">
+<div id="comment_body_3530772" class="blog_comment_body"><a href="#3529836" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3529836);">@</a>
+xiaoqi_dream<br>thx小漆</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3530772,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3530772,'Bury',this)">反对(0)</a></div><span id="comment_3530772_avatar" style="display:none;">http://pic.cnblogs.com/face/855100/20151210160037.png</span>
+</div>
+</div>
+<div class="feedbackItem">
+<div class="feedbackListSubtitle">
+<div class="feedbackManage">
+&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return GetCommentBody(3530773)">修改</a><a href="javascript:void(0);" onclick="return DelComment(3530773,this, 5955026)">删除</a></span>
+</div>
+<a href="#3530773" class="layer">#5楼</a><a name="3530773" id="comment_anchor_3530773"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2016-10-14 02:52</span> <a id="a_comment_author_3530773" href="https://www.cnblogs.com/chenzhiyin/" target="_blank">志银</a> <a href="http://msg.cnblogs.com/send/%E5%BF%97%E9%93%B6" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+</div>
+<div class="feedbackCon">
+<div id="comment_body_3530773" class="blog_comment_body"><a href="#3529895" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3529895);">@</a>
+绿茶丶咖啡<br>谢谢支持</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3530773,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3530773,'Bury',this)">反对(0)</a></div><span id="comment_3530773_avatar" style="display:none;">http://pic.cnblogs.com/face/855100/20151210160037.png</span>
+</div>
+</div>
+<div class="feedbackItem">
+<div class="feedbackListSubtitle">
+<div class="feedbackManage">
+&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return GetCommentBody(3530774)">修改</a><a href="javascript:void(0);" onclick="return DelComment(3530774,this, 5955026)">删除</a></span>
+</div>
+<a href="#3530774" class="layer">#6楼</a><a name="3530774" id="comment_anchor_3530774"></a>[<span class="louzhu">楼主</span>]  <span class="comment_date">2016-10-14 02:54</span> <a id="a_comment_author_3530774" href="https://www.cnblogs.com/chenzhiyin/" target="_blank">志银</a> <a href="http://msg.cnblogs.com/send/%E5%BF%97%E9%93%B6" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+</div>
+<div class="feedbackCon">
+<div id="comment_body_3530774" class="blog_comment_body"><a href="#3530222" title="查看所回复的评论" onclick="commentManager.renderComments(0,50,3530222);">@</a>
+九成<br>谢谢&lt;(￣︶￣)&gt;</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3530774,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3530774,'Bury',this)">反对(0)</a></div><span id="comment_3530774_avatar" style="display:none;">http://pic.cnblogs.com/face/855100/20151210160037.png</span>
+</div>
+</div>
+<div class="feedbackItem">
+<div class="feedbackListSubtitle">
+<div class="feedbackManage">
+&nbsp;&nbsp;<span class="comment_actions"><a href="javascript:void(0);" onclick="return GetCommentBody(3686620)">修改</a><a href="javascript:void(0);" onclick="return DelComment(3686620,this, 5955026)">删除</a></span>
+</div>
+<a href="#3686620" class="layer">#7楼</a><a name="3686620" id="comment_anchor_3686620"></a>[<span class="louzhu">楼主</span>]<span id="comment-maxId" style="display:none;">3686620</span><span id="comment-maxDate" style="display:none;">2017/5/8 13:14:38</span>  <span class="comment_date">2017-05-08 13:14</span> <a id="a_comment_author_3686620" href="https://www.cnblogs.com/chenzhiyin/" target="_blank">志银</a> <a href="http://msg.cnblogs.com/send/%E5%BF%97%E9%93%B6" title="发送站内短消息" class="sendMsg2This">&nbsp;</a>
+</div>
+<div class="feedbackCon">
+<div id="comment_body_3686620" class="blog_comment_body">（PS：由于网站更新，此教程有的地方已过世，待更新。。。）</div><div class="comment_vote"><a href="javascript:void(0);" class="comment_digg" onclick="return voteComment(3686620,'Digg',this)">支持(0)</a><a href="javascript:void(0);" class="comment_bury" onclick="return voteComment(3686620,'Bury',this)">反对(0)</a></div><span id="comment_3686620_avatar" style="display:none;">http://pic.cnblogs.com/face/855100/20151210160037.png</span>
+</div>
+</div>
+<div id="comments_pager_bottom"></div></div>
+</div>
+</div>
+
+<pre>
+<code class="cpp">#include&ltiostream&gt
+using namespace std;using namespace std;using namespace std;using namespace std;
+int main() {
+  int sum = 0;
+  for (int i = 0; i < 10; i++) {for (int i = 0; i < 10; i++) {for (int i = 0; i < 10; i++) {for (int i = 0; i < 10; i++) {for (int i = 0; i < {for (int i = 0; i < {for (int i = 0; i < {for (int i = 0; i < {for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      sum += j;
+    }
+  }
+  cout << sum; // 450
+}</code>
+</pre>
+
+<div id="mainContent" style="background: red;">mainContent</div>
+<div id="sideBar" style="background: yellow;">sideBar</div>
+
+
+
+
+
+
+
+
+
+
+<!--****************************************博客侧边栏公告（支持HTML代码）（支持JS代码）****************************************-->
+<!------------------------------------------侧边栏与内容栏互换(实现侧边栏在顶部功能)------------------------------------------>
+<!--注1:jQuery文件博客园中不用导入,博客园head中默认添加了-->
+<script src="https://files.cnblogs.com/files/chenzhiyin/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $("#sideBar").after($("#mainContent"));
+    $("#sidebar_search").after($("#sidebar_scorerank"));
+</script>
+
+<!------------------------------------------删除模板中多余链接式文件------------------------------------------>
+<script type="text/javascript">
+    function removejscssfile(filename, filetype){
+        var targetelement = (filetype == "js")? "script" : (filetype == "css") ? "link" : "none";
+        var targetattr = (filetype == "js") ? "src" : (filetype == "css") ? "href" :"none";
+        var allsuspects = document.getElementsByTagName(targetelement);
+        for (var i=allsuspects.length; i>=0;i--){
+            if (allsuspects[i] &&allsuspects[i].getAttribute(targetattr) != null && allsuspects[i].getAttribute(targetattr).indexOf(filename) != -1)
+                allsuspects[i].parentNode.removeChild(allsuspects[i]);
+        }
+    }
+    removejscssfile("/skins/darkgreentrip/bundle-darkgreentrip-mobile.css?v=6NcJHqsIyaE4w19VtgFvCFahrnr2rYCTRRTdxlMDhhQ1", "css");
+</script>
+
+<!------------------------------------------时间------------------------------------------>
+<!--注1:jQuery文件博客园中不用导入,博客园head中默认添加了-->
+<div class="wrapper clearfix show">
+    <div class="clock" id="clock"></div>
+</div>
+<script src="https://files.cnblogs.com/files/chenzhiyin/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://files.cnblogs.com/files/chenzhiyin/clock-1.1.0.min.js"></script>
+<script>
+    var clock = $("#clock").clock({
+        width: 150,
+        height: 220,
+        theme: 't1'
+    });
+</script>
+
+<!------------------------------------------头像------------------------------------------>
+<a href="https://www.cnblogs.com/chenzhiyin/">
+    <img class="headPortrait" src="https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_zain.png" />
+</a>
+
+<!------------------------------------------访客来源统计------------------------------------------>
+<!-- 1. -->
+<a href="https://info.flagcounter.com/94qF"><img src="https://s04.flagcounter.com/count2/94qF/bg_FFFFFF/txt_A3530D/border_FFFFFF/columns_3/maxflags_250/viewers_ViditorsZain/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+<!-- [URL=https://info.flagcounter.com/94qF][IMG]https://s04.flagcounter.com/count2/94qF/bg_FFFFFF/txt_A3530D/border_FFFFFF/columns_3/maxflags_250/viewers_ViditorsZain/labels_1/pageviews_1/flags_0/percent_0/[/IMG][/URL] -->
+<!-- 2. -->
+<a href="https://info.flagcounter.com/2aaD"><img src="https://s11.flagcounter.com/count2/2aaD/bg_FFFFFF/txt_784F1A/border_EB992F/columns_3/maxflags_250/viewers_VisitorsZain/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+<!-- [URL=https://info.flagcounter.com/2aaD][IMG]https://s11.flagcounter.com/count2/2aaD/bg_FFFFFF/txt_784F1A/border_EB992F/columns_3/maxflags_250/viewers_VisitorsZain/labels_1/pageviews_1/flags_0/percent_0/[/IMG][/URL] -->
+
+<!------------------------------------------访客总数统计------------------------------------------>
+<div>总访问量:<a href="http://www.amazingcounters.com"><img border="0" src="http://cc.amazingcounters.com/counter.php?i=3227890&c=9683983" alt="AmazingCounters.com"></a></div>
+
+<!------------------------------------------自定生成文章目录------------------------------------------>
+<link href="https://files.cnblogs.com/files/chenzhiyin/marvin.nav.css" rel="stylesheet">
+<script src="https://files.cnblogs.com/files/chenzhiyin/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://files.cnblogs.com/files/chenzhiyin/marvin.nav.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--****************************************页首Html代码****************************************-->
+<!------------------------------------------评论列表------------------------------------------>
+<link  type="text/css" rel="stylesheet" href="https://files.cnblogs.com/files/chenzhiyin/feedback.css" />
+
+<!------------------------------------------鼠标点击特效------------------------------------------>
+<!-- <script type="text/javascript" src="https://files.cnblogs.com/files/chenzhiyin/mouse.js"></script> -->
+<script type="text/javascript" src="./script/mouse.js"></script>
+
+<!------------------------------------------赞助------------------------------------------>
+<script type="text/javascript" src="https://files.cnblogs.com/files/chenzhiyin/tctip-1.0.3.min.js"></script>
+<script>
+    new tctip({
+        top: '20%',
+        button: {
+            id: 3,
+            type: 'zanzhu'
+        },
+        list: [
+            {
+                type: 'alipay',
+                qrImg: 'https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_zfbMoney.png'
+            }, {
+                type: 'wechat',
+                qrImg: 'https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_weMoney.png'
+            }
+        ]
+    }).init()
+</script>
+
+<!------------------------------------------代码高亮(highlight.js)------------------------------------------>
+<link rel="stylesheet" href="https://files.cnblogs.com/files/chenzhiyin/monokai-sublime.css">
+
+<!------------------------------------------页角添加Github链接或其他链接------------------------------------------>
+<!--页面左上角-->
+<a href="https://www.cnblogs.com/chenzhiyin/" title="我的站点" target="_Blank" class="github-corner" aria-label="View source on Github"><svg class="github-svg" width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: fixed; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-svg{z-index: 10;}.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<!--页面右上角-->
+<a href="https://github.com/ZainChen" title="Github" target="_Blank" class="github-corner" aria-label="View source on Github"><svg class="github-svg" width="80" height="80" viewBox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: fixed; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-svg{z-index: 10;}.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+<!------------------------------------------侧边栏操作按钮------------------------------------------>
+<!--注1:jQuery文件博客园中不用导入,博客园head中默认添加了-->
+<script src="https://files.cnblogs.com/files/chenzhiyin/jquery-3.3.1.min.js" type="text/javascript"></script>
+<!-- 1.侧边栏置顶 -->
+<div id="sideBarTop" onclick="$('#sideBar').css({'display': 'block', 'width': '100%'}); $('#mainContent').css({'width': '100%'}); $('#sideBarTop').css({'background': 'rgba(64,64,59,0.8)'}); $('#sideBarHide').css({'background': 'rgba(70,160,255,0.8)'}); if(document.documentElement.clientWidth > 768) {$('#sideBarMin').css({'background': 'rgba(70,160,255,0.8)'});} else {$('#sideBarMin').css({'background': 'rgba(64,64,59,0.8)'});}">侧边栏置顶</div>
+<!-- 2.侧边栏隐藏 -->
+<div id="sideBarHide" onclick="$('#sideBar').css({'display': 'none', 'width': '100%'}); $('#mainContent').css({'width': '100%'}); $('#sideBarHide').css({'background': 'rgba(64,64,59,0.8)'}); $('#sideBarTop').css({'background': 'rgba(70,160,255,0.8)'}); if(document.documentElement.clientWidth > 768) {$('#sideBarMin').css({'background': 'rgba(70,160,255,0.8)'});} else {$('#sideBarMin').css({'background': 'rgba(64,64,59,0.8)'});}">侧边栏隐藏</div>
+<!-- 3.侧边栏缩小(需添加响应式js代码) document.body.clientWidth > 900-->
+<div id="sideBarMin" onclick="if(document.documentElement.clientWidth > 768) {$('#sideBar').css({'display': 'block', 'width': '22%'}); $('#mainContent').css({'width': '75%'}); $('#sideBarMin').css({'background': 'rgba(64,64,59,0.8)'});}$('#sideBarMin').css({'background': 'rgba(64,64,59,0.8)'});if($('#sideBar').css('width') != $('#main').css('width') || $('#sideBar').css('display') == 'none') {$('#sideBarTop').css({'background': 'rgba(70,160,255,0.8)'});} else {$('#sideBarTop').css({'background': 'rgba(64,64,59,0.8)'});}if($('#sideBar').css('display') == 'block') {$('#sideBarHide').css({'background': 'rgba(70,160,255,0.8)'});} else {$('#sideBarHide').css({'background': 'rgba(64,64,59,0.8)'});}">侧边栏缩小</div>
+<script type="text/javascript">
+    function ZainWindow() {
+        var w = document.documentElement.clientWidth;  // 网页可见区域宽
+        //var h = document.documentElement.clientHeight;  // 网页可见区域高
+        //console.log(w+","+h);
+        if(w <= 768 && $("#sideBar").css("display") != "none") {
+            $('#sideBar').css({'display': 'block', 'width': '100%'});
+            $('#mainContent').css({'width': '100%'});
+        }
+        if(w <= 768 || ($("#sideBar").css("width") != $("#main").css("width") && $("#sideBar").css("display") != "none")) {
+            $('#sideBarMin').css({'background': 'rgba(64,64,59,0.8)'});
+        } else {
+            $('#sideBarMin').css({'background': 'rgba(70,160,255,0.8)'});
+        }
+        if($("#sideBar").css("width") != $("#main").css("width") || $("#sideBar").css("display") == "none") {
+            $('#sideBarTop').css({'background': 'rgba(70,160,255,0.8)'});
+        } else {
+            $('#sideBarTop').css({'background': 'rgba(64,64,59,0.8)'});
+        }
+        if($("#sideBar").css("display") == "block") {
+            $('#sideBarHide').css({'background': 'rgba(70,160,255,0.8)'});
+        } else {
+            $('#sideBarHide').css({'background': 'rgba(64,64,59,0.8)'});
+        }
+    }
+    //window.onload=function(){ ZainWindow(); }
+    $(function() { ZainWindow(); });
+    window.onresize = function(){
+        ZainWindow();
+    }
+</script>
+
+<!------------------------------------------复制添加版权声明------------------------------------------>
+<script type="text/javascript">
+function setClipboardText(event){
+    event.preventDefault();//阻止元素发生默认的行为（例如，当点击提交按钮时阻止对表单的提交）。
+    var node = document.createElement('div');
+    //对documentfragment不熟，不知道怎么获取里面的内容，用了一个比较笨的方式
+    node.appendChild(window.getSelection().getRangeAt(0).cloneContents());
+    //getRangeAt(0)返回对基于零的数字索引与传递参数匹配的选择对象中的范围的引用。对于连续选择，参数应为零。
+    var htmlData = '<div>'
+        + node.innerHTML
+        + '<br /><br />________________________________________________________________________________<br />'
+        + '作者：志银(ZainChen)<br />'
+        + '链接：https://www.cnblogs.com/chenzhiyin<br />'
+        + '来源：博客园<br />'
+        + '著作权归作者所有！<br />'
+        + '商业转载请联系作者(QQ:2384439266)获得授权，非商业转载请注明出处！<br />'
+        + '________________________________________________________________________________<br /><br />'
+        + '</div>';
+    var textData = window.getSelection().getRangeAt(0)
+        + '\n\n________________________________________________________________________________\n'
+        + '作者：志银(ZainChen)\n'
+        + '链接：https://www.cnblogs.com/chenzhiyin\n'
+        + '来源：博客园\n'
+        + '著作权归作者所有！\n'
+        + '商业转载请联系作者(QQ:2384439266)获得授权，非商业转载请注明出处！\n'
+        + '________________________________________________________________________________\n\n';
+    if(event.clipboardData){
+        event.clipboardData.setData("text/html", htmlData);
+        //setData(剪贴板格式, 数据) 给剪贴板赋予指定格式的数据。返回 true 表示操作成功。
+        event.clipboardData.setData("text/plain",textData);
+    }
+    else if(window.clipboardData){ //window.clipboardData的作用是在页面上将需要的东西复制到剪贴板上，提供了对于预定义的剪贴板格式的访问，以便在编辑操作中使用。
+        return window.clipboardData.setData("text", textData);
+    }
+};
+document.addEventListener('copy',function(e){
+    setClipboardText(e);
+});
+</script>
+
+<!------------------------------------------分享功能按键------------------------------------------>
+<!-- 博客园不支持 -->
+<script>
+    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"6","bdPos":"right","bdTop":"340"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+
+
+
+
+
+
+
+
+
+<!--****************************************页脚Html代码****************************************-->
+<!------------------------------------------评论列表------------------------------------------>
+<!--注1:jQuery文件博客园中不用导入,博客园head中默认添加了-->
+<script src="https://files.cnblogs.com/files/chenzhiyin/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#blogTitle h1').addClass('bounceInLeft animated');
+    $('#blogTitle h2').addClass('bounceInRight animated');
+    // 删除反对按钮
+    $('.buryit').remove();
+    initCommentData();
+});
+//志银zain 2018.11.01,解决http图片用于https网页会有警告提示问题,方法:js动态将http头全改为https
+function httpToHttps(strHttp) {
+    var strRetHttps;
+    var lenStrHttp = 0;
+    if(typeof(strHttp) != "undefined") {
+        lenStrHttp = strHttp.length;  //console.log(strHttp)
+    }
+    if(lenStrHttp >= 5) {
+        var strHead = "";
+        for(var i = 0; i < 5; i++) {
+            strHead += strHttp[i];
+        }
+        if(strHead == "http:") {
+            strRetHttps = "https:";
+            for(var i = 5; i < lenStrHttp; i++) {
+                strRetHttps += strHttp[i];
+            }
+        } else {
+            strRetHttps = strHttp;
+        }
+    } else {
+        strRetHttps = strHttp;
+    }
+    return strRetHttps;
+}
+function initCommentData() {
+    $('.feedbackItem').each(function() {
+        var text = $(this).find('.feedbackListSubtitle .layer').text();
+        // 将楼层信息放到data里面
+        // $(this).find('.blog_comment_body').attr('data-louceng', text.replace(/^#/g, ''));
+        if($(this).find('.feedbackListSubtitle .louzhu').length>0) $(this).addClass('myself');
+        var strGetHttp = $(this).find('> .feedbackCon > span').html();
+        strGetHttp = httpToHttps(strGetHttp);
+        var avatar = strGetHttp || 'https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_sample_face.gif';
+        $(this).find('> .feedbackCon > .blog_comment_body').append('<img class="user-avatar" src="'+avatar+'"/>')
+    });
+}
+$(document).ajaxComplete(function(event, xhr, settings) {
+    // 监听获取评论ajax事件
+    if(settings.url.indexOf('/mvc/blog/GetComments.aspx') >= 0) {
+        initCommentData();  //只用初始化函数不用ajax刷新,本地可行,博客园上不行
+    }
+});
+</script>
+
+<!------------------------------------------火箭返回顶部按钮------------------------------------------>
+<!--注:jQuery文件博客园中不用导入,博客园head中默认添加了-->
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+<script src="https://files.cnblogs.com/files/chenzhiyin/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    var e = $("#rocket-to-top"),
+    t = $(document).scrollTop(),
+    n,
+    r,
+    i = !0;
+    $(window).scroll(function() {
+        var t = $(document).scrollTop();
+        t == 0 ? e.css("background-position") == "0px 0px" ? e.fadeOut("slow") : i && (i = !1, $(".level-2").css("opacity", 1), e.delay(100).animate({
+            marginTop: "-1000px"
+        },
+        "normal",
+        function() {
+            e.css({
+                "margin-top": "0px",
+                display: "none"
+            }),
+            i = !0
+        })) : e.fadeIn("slow")
+    }),
+    e.hover(function() {
+        $(".level-2").stop(!0).animate({
+            opacity: 1
+        })
+    },
+    function() {
+        $(".level-2").stop(!0).animate({
+            opacity: 0
+        })
+    }),
+    $(".level-3").click(function() {
+        function t() {
+            var t = e.css("background-position");
+            if (e.css("display") == "none" || i == 0) {
+                clearInterval(n),
+                e.css("background-position", "0px 0px");
+                return
+            }
+            switch (t){
+            case "0px 0px":
+                e.css("background-position", "-298px 0px");
+                break;
+            case "-298px 0px":
+                e.css("background-position", "-447px 0px");
+                break;
+            case "-447px 0px":
+                e.css("background-position", "-596px 0px");
+                break;
+            case "-596px 0px":
+                e.css("background-position", "-745px 0px");
+                break;
+            case "-745px 0px":
+                e.css("background-position", "-298px 0px");
+            }
+        }
+        if (!i) return;
+        n = setInterval(t, 50),
+        $("html,body").animate({scrollTop: 0},"slow");
+    });
+});
+</script>
+
+<!------------------------------------------代码高亮(highlight.js)------------------------------------------>
+<!--注:jQuery文件博客园中不用导入,博客园head中默认添加了-->
+<script src="https://files.cnblogs.com/files/chenzhiyin/highlight.pack_all.js"></script>
+<script src="https://files.cnblogs.com/files/chenzhiyin/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+<script>
+    //添加行号，且代码高亮自定义
+    $("code").each(function(){
+      $(this).html("<ul><li>" + $(this).html().replace(/\n/g,"\n</li><li>") +"\n</li></ul>");
+    });
+</script>
+<script>
+    $(function() {
+        $("pre").each(function() {
+            $(this).hover(function() {
+                $(this).find("code").first().prepend("<div class=\'zain_open\'>▣</div>");
+                $(".zain_open").click(function() {
+                    $(".zain_open").css({"display": "none"});
+                    var pre = $(this).parent().parent().html();
+                    var pre1 = "<div class=\"zain_pre\"><pre>"+ pre +"<\/pre><\/div>";
+                    $("body").after(pre1);
+                    $(".zain_pre").prepend("<div class=\'zain_clear\'>✘</div>");
+                    $(".zain_clear").click(function() {
+                        $(".zain_pre").remove();
+                    });
+                    $(".zain_pre").prepend("<div class=\'zain_min_full\'>▬</div>");
+                    $(".zain_min_full").click(function() {
+                        $(this).next().next().find("code").first().css({"height": "17px"});
+                        $(this).next().next().find("code").first().css({"width": "300px"});
+                    });
+                    $(".zain_pre").prepend("<div class=\'zain_max_full\'>✚</div>");
+                    $(".zain_max_full").click(function() {
+                        $(this).next().next().next().find("code").first().css({"height": "100%"});
+                        $(this).next().next().next().find("code").first().css({"width": "100%"});
+                    });
+                });
+                $(this).find("code").first().prepend("<div class=\'zain_min\'>▬</div>");
+                $(".zain_min").click(function() {
+                    $(this).parent().css({"height": "17px"});
+                    $(this).parent().css({"width": "300px"});
+                });
+                $(this).find("code").first().prepend("<div class=\'zain_max\'>✚</div>");
+                $(".zain_max").click(function() {
+                    $(this).parent().css({"height": "100%"});
+                    $(this).parent().css({"width": "100%"});
+                });
+            }, function() {
+                $(".zain_open").remove();
+                $(".zain_min").remove();
+                $(".zain_max").remove();
+            });
+        });
+        $(document).keyup(function(e){
+            if (e.keyCode == 27)  {
+                $(".zain_pre").remove();
+            }
+        });
+    });
+</script>
+
+<!------------------------------------------粒子吸附特效------------------------------------------>
+<!--注1:IE——V11浏览器不支持-->
+<!-- <script type="text/javascript" color="255,100,0" opacity='0.7' zIndex="1" count="100" src="https://files.cnblogs.com/files/chenzhiyin/canvas-nest.js"></script> -->
+
+
+
+
+
+<!--****************************************文章签名及版权声明****************************************-->
+<div>作者：<a href="http://www.cnblogs.com/chenzhiyin/" target="_blank">志银(ZainChen)</a></div>
+<div>出处：<a href="http://www.cnblogs.com/chenzhiyin/" target="_blank">http://www.cnblogs.com/chenzhiyin/</a></div>
+<div>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 </div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+

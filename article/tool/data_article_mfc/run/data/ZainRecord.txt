@@ -1,0 +1,8 @@
+[Zain 2019/01/16-16:04:39.203]: 已保存到记录文件!储存目录:./data/ZainRecord.txt
+[Zain 2019/01/16-16:04:53.348]: 已保存到记录文件!储存目录:./data/ZainRecord.txt
+[Zain 2019/01/16-16:04:53.520]: 已保存到记录文件!储存目录:./data/ZainRecord.txt
+[Zain 2019/01/16-16:04:53.649]: 已保存到记录文件!储存目录:./data/ZainRecord.txt
+[Zain 2019/01/16-16:04:53.773]: 已保存到记录文件!储存目录:./data/ZainRecord.txt
+[Zain 2019/01/16-16:04:53.913]: 已保存到记录文件!储存目录:./data/ZainRecord.txt
+[Zain 2019/01/16-16:04:54.037]: 已保存到记录文件!储存目录:./data/ZainRecord.txt
+[Zain 2019/01/16-16:04:54.163]: 已保存到记录文件!储存目录:./data/ZainRecord.txt
