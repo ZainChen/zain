@@ -20,7 +20,7 @@ WordPress 5.0.3
 
 PS：若下方提示`.htaccess`文件**不可写**，则进行后续操作，若无下方提示且修改后页面可正常访问，则不用进行后续操作
 
-![p1](./image/p1.png)
+![p1](./image/bp1.png)
 
 # 2.修改`WordPress`配置文件
 
@@ -45,7 +45,7 @@ RewriteRule . /blogs/index.php [L]
 :wq  //保存退出
 ```
 
-![p2](./image/p2.png)
+![p2](./image/bp2.png)
 
 # 3.修改Apache2配置文件
 
@@ -55,7 +55,7 @@ RewriteRule . /blogs/index.php [L]
 vim /etc/apache2/apache2.conf  //vim编辑
 ```
 
-![p3](./image/p3.png)
+![p3](./image/bp3.png)
 
 # 4.重启Apache2服务
 
@@ -65,4 +65,4 @@ vim /etc/apache2/apache2.conf  //vim编辑
 service apache2 restart
 ```
 
-![p4](./image/p4.png)
+![p4](./image/bp4.png)

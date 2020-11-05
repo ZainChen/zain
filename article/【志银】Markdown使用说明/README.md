@@ -93,17 +93,17 @@
 
 示例：
 
-![志银](https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_zain.png "志银")
+![志银](./image/zain.png "志银")
 
 ## 5.2.方法2
 
 注：直接用html标签，可修改图片大小
 
 ```html
-<img src="https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_zain.png" style="width:100px;height:100px;" alt="志银" />
+<img src="./image/zain.png" style="width:100px;height:100px;" alt="志银" />
 ```
 
-<img src="https://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_zain.png" style="width:100px;height:100px;" alt="志银" />
+<img src="./image/zain.png" style="width:100px;height:100px;" alt="志银" />
 
 
 

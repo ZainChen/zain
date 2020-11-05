@@ -23,7 +23,7 @@ int Lowbit(x) {
 
 1&(-1)的二进制位运算为**(二个二进位都为1)**：
 
-![img](http://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_content1.png)
+![img](./image/content1.png)
 
 所以1&(-1)=1
 
@@ -37,7 +37,7 @@ int Lowbit(x) {
 
 6&(-6)的二进制位运算为**(二个二进位都为1**)：
 
-![img](http://images.cnblogs.com/cnblogs_com/chenzhiyin/1332583/o_content2.png)
+![img](./image/content2.png)
 
 所以6&(-6)=2
 
