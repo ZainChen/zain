@@ -29,6 +29,24 @@
 
 ## 4、疑问
 
+### 前端程序员经常忽视的一个JavaScript面试题
+
+https://github.com/Wscats/articles/issues/85
+
+#### 问题1：
+
+用 var 直接在控制台声明变量，变量会直接给到 window。用 let 不会有这种现象。为啥子呢。
+
+![p1](./image/question-1.png)
+
+#### 问题2：
+
+块级作用域描述更新。
+
+![p1](./image/question-2.png)
+
+
+
 ## 5、闲聊
 
 
