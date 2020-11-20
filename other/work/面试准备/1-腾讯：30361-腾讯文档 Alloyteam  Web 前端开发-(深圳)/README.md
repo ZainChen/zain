@@ -23,7 +23,7 @@ https://github.com/Wscats/articles/issues/85
 
 #### 问题1：
 
-用 var 直接在控制台声明变量，变量会直接给到 window。用 let 不会有这种现象。为啥子呢。
+用 var 直接在控制台声明变量，变量会直接给到 window。用 let 不会有这种现象。为啥子呢（看到有文章说：在web页面中全局变量属于 window 对象）。
 
 ![p1](./image/question-1.png)
 
