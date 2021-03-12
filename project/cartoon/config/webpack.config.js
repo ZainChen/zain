@@ -335,7 +335,7 @@ module.exports = function (webpackEnv) {
         }),
         ...(modules.webpackAliases || {}),
         // 模块导入别名，指定后可以在文件之直接 import * from 'src/*';
-        src: path.resolve(__dirname, '../src/'),
+        src: path.resolve(__dirname, '../src/')
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
