@@ -18,7 +18,17 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    // 当生成文件时指定行结束符： "crlf"（windows）或 "lf"（unix）。
+    "newLine": "lf",
+    // 指定模块的路径，和 baseUrl 有关联，和 webpack 中 resolve.alias 配置一样（webpack 中已配置）
+    "paths": {
+        // 模块导入别名，指定后可以在文件之直接 import * from 'src/*';
+        "src/*": [
+            "./src/*"
+        ]
+    }
   },
   "include": [
     "src"
