@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppThunk, RootState } from '../../app/store';
+import { AppThunk, RootState } from 'src/store';
 
 interface CounterState {
     value: number;
@@ -47,4 +47,4 @@ export const incrementAsync = (amount: number): AppThunk => (dispatch) => {
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectCount = (state: RootState) => state.counter.value;
 
-export default counterSlice.reducer;
+export const counterReducer = counterSlice.reducer;
