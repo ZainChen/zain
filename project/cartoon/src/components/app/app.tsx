@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from 'src/assets/icons/logo.svg';
+import logo from 'src/assets/images/zain-500.jpg';
 import { Counter } from 'src/components/counter';
-// import { Counter } from '../../features/counter/Counter';
 import './app.css';
 
 export function App() {
